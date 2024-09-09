@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吹奏楽コンクール | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site</title>
+    <meta name="description" content="A-Windsがこれまで出場した吹奏楽コンクールの結果です。">
+    <!-- フォント関連 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS関連 -->
+    <link rel="stylesheet" href="/styles/headerfooter.css">
+    <link rel="stylesheet" href="/competition/style.css">
+    <!-- Favicon関連 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" href="/img/favicon/favicon.ico" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ogp -->
+    <meta property="og:url" content="https://a-winds.github.io/competition/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="吹奏楽コンクールの記録 | A-Winds" />
+    <meta property="og:description" content="A-Windsの吹奏楽コンクールの出場記録です。" />
+    <meta property="og:site_name" content="A-Winds Official Web Site" />
+    <meta property="og:image" content="https://a-winds.github.io/img/ogimage.jpg" />
+    <!-- <meta property="fb:app_id" content=""> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="max-image-preview:large">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-logo">
+            <a href="/"><img class="header-logo-img" src="/img/A-Winds_LOGO.svg" alt="A-Winds Logo" /></a>
+        </h1>
+        <nav class="header-nav-pc">
+            <ul class="header-navlist">
+                <li class="header-navitem"><a href="/">トップページ</a></li>
+                <li class="header-navitem"><a href="/infomation/">お知らせ</a></li>
+                <li class="header-navitem"><a tabindex="-1">演奏会情報</a>
+                    <ul>
+                        <li><a class="header-submenu" href="/concerts/upcoming/">＞開催予定の演奏会</a></li>
+                        <li><a class="header-submenu" href="/concerts/history/">＞演奏会の記録</a></li>
+                        <li><a class="header-submenu" href="#">＞吹奏楽コンクールの記録</a></li>
+                    </ul>
+                </li>
+                <li class="header-navitem"><a href="/joinus/">団員募集</a></li>
+                <li class="header-navitem"><a href="/calendar/">活動日程</a></li>
+                <li class="header-navitem"><a href="/sns/">SNS情報</a></li>
+                <li class="header-navitem"><a href="/contact/">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <div class="header-sp">
+            <input id="drawer-input" class="drawer-hidden" type="checkbox" />
+            <label for="drawer-input" class="drawer-open"><span></span></label>
+            <nav class="header-nav-sp">
+                <ul class="header-navlist-sp">
+                    <li class="header-navitem-sp"><a href="/">トップページ</a></li>
+                    <li class="header-navitem-sp"><a href="/infomation/">お知らせ</a></li>
+                    <li class="header-navitem-sp"><a href="/concerts/upcoming/">開催予定の演奏会</a></li>
+                    <li class="header-navitem-sp"><a href="/concerts/history/">演奏会の記録</a></li>
+                    <li class="header-navitem-sp"><a href="#">吹奏楽コンクールの記録</a></li>
+                    <li class="header-navitem-sp"><a href="/joinus/">団員募集</a></li>
+                    <li class="header-navitem-sp"><a href="/calendar/">活動日程</a></li>
+                    <li class="header-navitem-sp"><a href="/sns/">SNS情報</a></li>
+                    <li class="header-navitem-sp"><a href="contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="header-margin"></div>
+
+    <div class="title">
+        <h1 class="headline">吹奏楽コンクールの記録</h1>
+        <h2 class="headline-en">Competition</h2>
+    </div>
+
+    <section class="Section">
+        <p class="section-description">
+            <img class="A" src="/img/A-Winds.svg" alt="A-Winds">が出場した吹奏楽コンクールの記録です。
+        </p>
+
+        <div class="container">
+            <iframe class="player" id="mainPlayer"
+                src="https://www.youtube.com/embed/i8EXE7QHdZk?modestbranding=1&widget_referrer"
+                allow="fullscreen"></iframe>
+
+            <ul id="videoList">
+                <li onclick="changeVideo('i8EXE7QHdZk', this)" class="active"><img class="taclte-icon"
+                        src="/img/tactle.png" alt="tactle">2024</li>
+                <li onclick="changeVideo('85yrFkWrSR4', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2023</li>
+                <li onclick="changeVideo('FK00ozpXi_4', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2022</li>
+                <li onclick="changeVideo('x5ILnuqk9AU', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2019</li>
+                <li onclick="changeVideo('1CXdCesdi1U', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2018</li>
+                <li onclick="changeVideo('eqhjyEa1zmU', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2017</li>
+                <li onclick="changeVideo('t6XNZM-TiOA', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2016</li>
+                <li onclick="changeVideo('Er_EILSNFDs', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2015</li>
+                <li onclick="changeVideo('3DP9pHr_JBM', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2014</li>
+                <li onclick="changeVideo('hapzaXOdy8g', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2013</li>
+                <li onclick="changeVideo('Ouo_v-S4uFA', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2012</li>
+                <li onclick="changeVideo('VGkpHYIcT9E', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2011</li>
+                <li onclick="changeVideo('dLawPF30jgI', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2010</li>
+                <li onclick="changeVideo('8sbgOCuj5LU', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2009</li>
+                <li onclick="changeVideo('v-BduHWLGmk', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2008</li>
+                <li onclick="changeVideo('C1hTB3xqsw8', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2007</li>
+                <li onclick="changeVideo('Ye0b2QYw0w0', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2006</li>
+                <li onclick="changeVideo('syYWqwRNEWk', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2005</li>
+                <li onclick="changeVideo('GIuqod7KTCI', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2004</li>
+                <li onclick="changeVideo('WVGl44sYYdU', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2003</li>
+                <li onclick="changeVideo('IDnMQ2833MY', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2002</li>
+                <li onclick="changeVideo('Wbcoup1LMiI', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2001</li>
+                <li onclick="changeVideo('T9ju6wF6fUI', this)"><img class="taclte-icon" src="/img/tactle.png"
+                        alt="tactle">2000</li>
+            </ul>
+        </div>
+
+        <div id="i8EXE7QHdZk" class="video-description active">
+            <h3>- 2024年 -</h3>
+            <p>
+                指揮 : 潮見 裕章<br>
+                課題曲 : 風がきらめくとき／近藤 礼隆<br>
+                自由曲 : RENAVIS／高 昌帥<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="85yrFkWrSR4" class="video-description">
+            <h3>- 2023年 -</h3>
+            <p>
+                指揮 : 小谷 俊介<br>
+                課題曲 : 行進曲「煌めきの朝」／牧野 圭吾<br>
+                自由曲 : シンフォニエッタ第3番「響きの森」／福島 弘和<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（守山市民ホール）: <span class="copper">銅賞</span>
+            </p>
+        </div>
+        <div id="FK00ozpXi_4" class="video-description">
+            <h3>- 2022年 -</h3>
+            <p>
+                指揮 : 小谷 俊介<br>
+                課題曲 : ジェネシス／鈴木 英史<br>
+                自由曲 : 吹奏楽のための第2組曲「イル・フィラート」／高 昌帥<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="x5ILnuqk9AU" class="video-description">
+            <h3>- 2019年 -</h3>
+            <p>
+                指揮 : 潮見 裕章<br>
+                課題曲 : 「あんたがたどこさ」の主題による幻想曲／林 大地<br>
+                自由曲 : 楓葉の舞／長生 淳<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（守山市民ホール）: <span class="copper">銅賞</span>
+            </p>
+        </div>
+        <div id="1CXdCesdi1U" class="video-description">
+            <h3>- 2018年 -</h3>
+            <p>
+                指揮 : 潮見 裕章<br>
+                課題曲 : 吹奏楽のための「ワルツ」／高 昌帥<br>
+                自由曲 : 交響曲 第４楽章／矢代 秋雄<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（ひこね市文化プラザ）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="eqhjyEa1zmU" class="video-description">
+            <h3>- 2017年 -</h3>
+            <p>
+                指揮 : 潮見 裕章<br>
+                課題曲 : 春風の通り道／西山 知宏<br>
+                自由曲 : Chirche for Wind Orchestra／高 昌帥<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（姫路市文化センター）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="t6XNZM-TiOA" class="video-description">
+            <h3>- 2016年 -</h3>
+            <p>
+                指揮 : 松下 浩之<br>
+                課題曲 : スペインの市場で／山本 雅一<br>
+                自由曲 : エクストリーム・メークオーヴァー／Ｊ.デ=メイ<br><br>
+                奈良県大会（さざんかホール）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="Er_EILSNFDs" class="video-description">
+            <h3>- 2015年 -</h3>
+            <p>
+                指揮 : 松下 浩之<br>
+                課題曲 : 春の道を歩こう／佐藤 邦宏<br>
+                自由曲 : 宇宙の音楽／Ｐ.スパーク<br><br>
+                奈良県大会（さざんかホール）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="3DP9pHr_JBM" class="video-description">
+            <h3>- 2014年 -</h3>
+            <p>
+                指揮 : 松下 浩之<br>
+                課題曲 : 斎太郎節の主題による幻想／合田 佳代子<br>
+                自由曲 : 地底旅行／Ｐ.グレイアム<br><br>
+                奈良県大会（さざんかホール）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（守山市民ホール）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="hapzaXOdy8g" class="video-description">
+            <h3>- 2013年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 流沙／広瀬 正憲<br>
+                自由曲 : SUKU-SUKU／前田 恵実<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="Ouo_v-S4uFA" class="video-description">
+            <h3>- 2012年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 吹奏楽のための綺想曲「じゅげむ」／足立 正<br>
+                自由曲 : ウィズ・ハート・アンド・ヴォイス／Ｄ.ギリングハム<br><br>
+                奈良県大会（さざんかホール）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（アルカイックホール）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="VGkpHYIcT9E" class="video-description">
+            <h3>- 2011年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 南風のマーチ／渡口 公康<br>
+                自由曲 : フェスティヴァル・ヴァリエーション／Ｃ.Ｔ.スミス<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="dLawPF30jgI" class="video-description">
+            <h3>- 2010年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 吹奏楽のための民謡「うちなーのてぃだ」／長野 雄行<br>
+                自由曲 : ウィンド・ブリッツ／Ｄ.ブージョワー<br><br>
+                奈良県大会（奈良県文化会館）: 賞なし
+            </p>
+        </div>
+        <div id="8sbgOCuj5LU" class="video-description">
+            <h3>- 2009年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 16世紀のシャンソンによる変奏曲／諏訪 雅彦<br>
+                自由曲 : 大阪俗謡による幻想曲／大栗 裕 arr. 辻井 清幸<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（アルカイックホール）: <span class="copper">銅賞</span>
+            </p>
+        </div>
+        <div id="v-BduHWLGmk" class="video-description">
+            <h3>- 2008年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 火の断章／井澗 昌樹<br>
+                自由曲 : ハリソンの夢／Ｐ.グレーアム<br><br>
+                奈良県大会（奈良県文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（守山市民ホール）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="C1hTB3xqsw8" class="video-description">
+            <h3>- 2007年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : マーチ「ブルー・スカイ」／高木 登古<br>
+                自由曲 : 「ダンス・ムーヴメント」より 第４楽章／Ｐ.スパーク<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（橿原文化会館）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="Ye0b2QYw0w0" class="video-description">
+            <h3>- 2006年 -</h3>
+            <p>
+                指揮 : 井村 誠貴<br>
+                課題曲 : 海へ．．．吹奏楽のために／三澤 慶<br>
+                自由曲 : Mindscape for Wind Orchestra／高 昌帥<br><br>
+                奈良県大会（奈良県文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（京都会館）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="syYWqwRNEWk" class="video-description">
+            <h3>- 2005年 -</h3>
+            <p>
+                指揮 : 魚谷 昌克<br>
+                課題曲 : マーチ「春風」／南 俊明<br>
+                自由曲 : ラザロの復活／樽屋 雅徳<br><br>
+                奈良県大会（橿原文化会館）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="GIuqod7KTCI" class="video-description">
+            <h3>- 2004年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 祈りの旅／北爪 道夫<br>
+                自由曲 : 3つのジャポニスムより 3.祭り／真島 俊夫<br><br>
+                奈良県大会（奈良県文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="WVGl44sYYdU" class="video-description">
+            <h3>- 2003年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : ウィナーズ－吹奏楽のための行進曲／諏訪 雅彦<br>
+                自由曲 : 水夫と鯨より I.イシュメール V.白鯨／マクベス<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="IDnMQ2833MY" class="video-description">
+            <h3>- 2002年 -</h3>
+            <p>
+                指揮 : 吉崎 直之<br>
+                課題曲 : 吹奏楽のためのラメント／高 昌帥<br>
+                自由曲 : 吹奏楽のための「天地人」／和田 薫<br><br>
+                奈良県大会（奈良県文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+        <div id="Wbcoup1LMiI" class="video-description">
+            <h3>- 2001年 -</h3>
+            <p>
+                指揮 : 井村 誠貴<br>
+                課題曲 : 行進曲「SLが行く」／若杉 海一<br>
+                自由曲 : アルプスの詩／フランコ・チェザリーニ<br><br>
+                奈良県大会（橿原文化会館）: <span class="gold">金賞</span>・<span class="A">代表</span><br>
+                関西大会（奈良県文化会館）: <span class="silver">銀賞</span>
+            </p>
+        </div>
+        <div id="T9ju6wF6fUI" class="video-description">
+            <h3>- 2000年 -</h3>
+            <p>
+                指揮 : 小谷 康夫<br>
+                課題曲 : 道祖神の詩／福島 弘和<br>
+                自由曲 : 交響曲第１番「ストーンヘンジ」／P.W.ホエアー<br><br>
+                奈良県大会（奈良県文化会館）: <span class="gold">金賞</span>
+            </p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <figure class="footer-logo">
+            <img class="footer-logo-img" src="/img/A-Winds_LOGO.svg" height="100" alt="A-winds Logo" />
+            <figcaption class="footer-logo-name">
+                A-Winds 奈良アマチュアウィンドオーケストラ<br />
+                Official Web Site
+            </figcaption>
+        </figure>
+        <hr class="footer-line">
+        <div class="footer-sns_headline">
+            <h2 class="footer-sns_title">A-Winds SNSアカウント</h2>
+            <ul class="footer-sns">
+                <li class="footer-sns-icon">
+                    <a href="https://youtube.com/@AWinds" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/yt_icon_pms.png" alt="A-Winds YouTube" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://www.facebook.com/A.Winds.Nara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/Facebook_Logo_Primary.png"
+                            alt="A-Winds Facebook" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://twitter.com/A_WindsNara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/logo-black.png" alt="A-Winds X" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://www.instagram.com/a_winds_nara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/Instagram_Glyph_Gradient.png"
+                            alt="A-Winds Instagram" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr class="footer-line">
+        <small class="footer-copy">Copyright © 2024 A-Winds all rights reserved.</small>
+
+        <script src="/js/youtubePlayer.js"></script>
+    </footer>
+
+<script src="/js/headerEffect.js"></script>
+</body>
+
+</html>

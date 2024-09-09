@@ -1,0 +1,229 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: #111;
+  margin: 0;
+}
+label, input, textarea, button {
+  cursor: pointer;
+}
+.Top {
+  width: 100%;
+  object-fit: cover;
+  background-image: url('/img/top_img_background.png');
+  background-size: cover;
+  background-position: center;
+}
+.Section {
+  color: #eee;
+  text-align: center;
+  padding: 0 5%;
+  margin-bottom: 80px;
+}
+.section-headline {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin: 40px 0 10px 0;
+}
+.A-headline {
+  color: #ea2f2fff;
+  height: 3rem;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+.section-headline-br {
+  display: none;
+}
+.section-headline-en {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: inline-block;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 40px;
+  width: 70%;
+}
+.A-headline-en {
+  color: #ea2f2fff;
+  height: 2rem;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+.section-article {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-article.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about-image {
+  max-width: 60%;
+}
+.about-description {
+  max-width: 60%;
+  margin: 0 auto;
+}
+.A {
+  color: #ea2f2fff;
+  height: 1.4rem;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+.concert-thema {
+  font-style: italic;
+}
+.section-button {
+  margin-top: 40px;
+  text-align: center;
+}
+.section-article-link {
+  color: #eee;
+  text-decoration: none;
+}
+.section-article-link:hover {
+  color: #ea2f2fff;
+}
+.button {
+  border: 0;
+  color: #eee;
+  display: inline-block;
+  font-weight: bold;
+  background-color: #333;
+  text-align: center;
+  padding: 15px 60px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000;
+  transition: box-shadow .2s;
+}
+.button:hover {
+  color: #ea2f2fff;
+  box-shadow: 0 0 0 #000;
+}
+.contact-button {
+  width: 65%;
+  border: 0;
+  color: #eee;
+  display: inline-block;
+  font-weight: bold;
+  background-color: #333;
+  text-align: center;
+  padding: 15px 60px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #000;
+  transition: box-shadow .2s;
+}
+.contact-button:hover {
+  color: #ea2f2fff;
+  box-shadow: 0 0 0 #000;
+}
+.grid {
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.grid-item{
+  list-style: none;
+  vertical-align: top;
+}
+.grid-col-3 > .grid-item {
+  width: 33.3%;
+}
+.card {
+  color: #eee;
+  padding: 0 10px;
+  height: 100%;
+}
+.card-link {
+  display: block;
+  height: 100%;
+  color: #eee;
+  text-decoration: none;
+  position: relative;
+  transition: background-color .2s;
+  border: 1px solid #333;
+}
+.card-link:hover {
+  color: #333;
+  background-color: #eee;
+}
+.card-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  color: #eee;
+  display: block;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+}
+.card-info {
+  padding: 5px 10px 20px 10px;
+}
+/* .card-time {} */
+.card-headline {
+  margin: 0;
+}
+.card-description {
+  margin: 0 ;
+}
+.mailadress {
+  text-decoration: none;
+  color: #eee;
+}
+.mailadress:hover {
+  color: #ea2f2fff;
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 13px;
+  }
+  .Top {
+      height: auto;
+  }
+  .section-headline {
+    margin: 20px 0 5px 0;
+  }
+  .section-headline-en {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  .section-headline-br {
+    display: inline;
+  }
+  .about-image {
+    max-width: 90%;
+  }
+  .about-description {
+    max-width: 90%;
+  }
+  .section-button {
+    margin-top: 5px;
+  }
+  .grid {
+    display: block;
+    padding: 0;
+  }
+  .grid-col-3 > .grid-item {
+      margin: 10px 0;
+      width: 100%;
+      height: auto;
+  }
+}

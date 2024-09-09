@@ -1,0 +1,96 @@
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #111;
+    margin: 0;
+}
+label, input, textarea, button {
+    cursor: pointer;
+}
+.title {
+    padding-top: 60px;
+    color: #eee;
+    text-align: center;
+    background-image: url('/img/thumb.png');
+    background-size: cover;
+    background-position: center;
+}
+.headline {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin: 40px 0 10px 0;
+    }
+.headline-en {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    display: inline-block;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+    width: 70%;
+}
+.Section {
+    color: #eee;
+    text-align: center;
+    padding: 0 5%;
+    margin-bottom: 80px;
+    padding-top: 60px;
+}
+.section-description {
+    max-width: 60%;
+    margin: 0 auto;
+}
+.mailadress {
+    text-decoration: none;
+    color: #eee;
+}
+.mailadress:hover {
+    color: #ea2f2fff;
+}
+.section-button {
+    margin-top: 40px;
+    text-align: center;
+}
+.contact-button {
+    width: 65%;
+    border: 0;
+    color: #eee;
+    display: inline-block;
+    font-weight: bold;
+    background-color: #333;
+    text-align: center;
+    padding: 15px 60px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #000;
+    transition: box-shadow .2s;
+}
+.contact-button:hover {
+    color: #ea2f2fff;
+    box-shadow: 0 0 0 #000;
+}
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 13px;
+    }
+    .title {
+        padding-top: 3px;
+    }
+    .headline {
+        margin: 20px 0 5px 0;
+    }
+    .headline-en {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .section-description {
+        max-width: 90%;
+    }
+}

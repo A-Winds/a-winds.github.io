@@ -1,0 +1,285 @@
+/*---------- Header ----------*/
+.header {
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    border-bottom: inset thin #999;
+    transition: background 0.5s ease, backdrop-filter 0.5s ease;
+}
+.header.scrolled {
+    background-color: rgba(255,255,255,0);
+    border-bottom: inset thin rgba(255,255,255,0);
+}
+.header.scrolled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(255,255,255,0.4);
+    border-bottom: inset thin rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.header-logo {
+    margin: 0;
+}
+.header-logo > a {
+    display: block;
+}
+.header-logo-img {
+    height: 80px;
+}
+/* .header-nav-pc {} */
+.header-navlist {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+ul.header-navlist ul {
+    opacity: 0;
+    visibility: hidden;
+    list-style: none;
+    padding-left: 0;
+    position: absolute;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+ul.header-navlist li:hover ul {
+    opacity: 1;
+    visibility: visible;
+}
+ul.header-navlist li ul li {
+    padding: 10px 0;
+    background-color: rgba(0,0,0,0.8);
+}
+.header-submenu {
+    color: #eee;
+    padding: 0 15px;
+    text-decoration: none;
+}
+.header-submenu:hover {
+    color: #ea2f2fff;
+}
+/* .header-navitem {} */
+.header-navitem > a {
+    display: block;
+    padding: 30px 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+}
+.header-navitem > a:hover {
+    color: #ea2f2fff;
+    border-bottom: 2px solid #ea2f2fff;
+}
+.header-sp {
+    display: none;
+}
+.header-margin {
+    margin-top: 80px;
+}
+@media screen and (max-width: 850px) {
+    .header {
+        padding: 0;
+        height: 60px;
+    }
+    .header-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .header-logo-img {
+        height: 50px;
+    }
+    .header-nav-pc {
+        display: none;
+    }
+    .header-sp {
+        display: block;
+    }
+    .drawer-hidden {
+        display: none;
+    }
+    .drawer-open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 20px;
+        z-index: 10001;
+        cursor: pointer;
+    }
+    .drawer-open span,
+    .drawer-open span:before,
+    .drawer-open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+    }
+    .drawer-open span:before {
+        bottom: 8px;
+    }
+    .drawer-open span:after {
+        top: 8px;
+    }
+    #drawer-input:checked ~ .drawer-open span {
+        background: rgba(255, 255, 255, 0);
+    }
+    #drawer-input:checked ~ .drawer-open span::before {
+        bottom: 0;
+        background: #eee;
+        transform: rotate(45deg);
+    }
+    #drawer-input:checked ~ .drawer-open span::after {
+        top: 0;
+        background: #eee;
+        transform: rotate(-45deg);
+    }
+    .header-nav-sp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #eee;
+        font-size: 2em;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 10000;
+    }
+    .header-navlist-sp {
+        list-style: none;
+        padding-left: 0;
+    }
+    .header-navitem-sp {
+        margin-top: 0.3rem;
+    }
+    .header-navitem-sp a {
+        color: #eee;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    #drawer-input:checked ~ .header-nav-sp {
+        opacity: 1;
+        visibility: visible;
+    }
+    .header-margin {
+        margin-top: 60px;
+    }
+}
+
+
+/*---------- Footer ----------*/
+.footer {
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    width: 100%;
+    background-image: url(/img/footer_back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top: inset thin #eee;
+    backdrop-filter: blur(3px);
+    color: #111;
+}
+.footer-logo {
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo-img {
+    width: 25%;
+    height: auto;
+}
+.footer-logo-name {
+    font-family: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    padding: 20px;
+    font-size: 15px;
+}
+.footer-line {
+    border-color: #eee;
+}
+.footer-sns_headline {
+    padding: 40px 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+/* .footer-sns_title {} */
+.footer-sns {
+    width: 60%;
+    display: flex;
+}
+.footer-sns-icon {
+    width: 20%;
+    list-style: none;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-sns-icon-img {
+    width: 30%;
+    list-style: none;
+}
+.footer-copy {
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    .footer-logo {
+        display: block;
+        padding: 5px 0;
+        text-align: center;
+    }
+    .footer-logo-img {
+        width: 40%;
+    }
+    .footer-logo-name {
+        padding: 5px;
+        text-align: center;
+    }
+    .footer-sns_headline {
+        display: block;
+        padding: 10px 5%;
+    }
+    .footer-sns_title {
+        font-size: 15px;
+    }
+    .footer-sns {
+        width: 100%;
+        padding-left: 0;
+    }
+    .footer-sns-icon-img {
+        width: 50%;
+        list-style: none;
+    }
+}
