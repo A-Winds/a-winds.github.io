@@ -82,6 +82,10 @@ label, input, textarea, button {
     height: 1.2rem;
     vertical-align: middle;
 }
+.program {
+    width: 80%;
+    height: 700px;
+}
 .section-button {
     margin-top: 40px;
     text-align: center;
@@ -123,5 +127,9 @@ label, input, textarea, button {
     }
     .section-description {
         max-width: 95%;
+    }
+    .program {
+        width: 98%;
+        height: 700px;
     }
 }
