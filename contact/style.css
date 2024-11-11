@@ -48,7 +48,7 @@ label, input, textarea, button {
     margin: 0 auto;
 }
 .mailadress {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: #eee;
 }
 .mailadress:hover {
