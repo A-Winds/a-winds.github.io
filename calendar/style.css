@@ -66,6 +66,13 @@ label, input, textarea, button {
     vertical-align: middle;
     margin-top: -4px;
 }
+.url-calendar {
+    /* text-decoration: none; */
+    color: #eee;
+}
+.url-calendar:hover {
+    color: #ea2f2fff;
+}
 .calendar iframe {
     width: 80%;
     height: 600px;
