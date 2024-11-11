@@ -46,7 +46,7 @@
                     <ul>
                         <li><a class="header-submenu" href="/concerts/upcoming/">＞開催予定の演奏会</a></li>
                         <li><a class="header-submenu" href="/concerts/history/">＞演奏会の記録</a></li>
-                        <li><a class="header-submenu" href="#">＞吹奏楽コンクールの記録</a></li>
+                        <li><a class="header-submenu" href="/competition/">＞吹奏楽コンクールの記録</a></li>
                     </ul>
                 </li>
                 <li class="header-navitem"><a href="/joinus/">団員募集</a></li>
@@ -64,7 +64,7 @@
                     <li class="header-navitem-sp"><a href="/infomation/">お知らせ</a></li>
                     <li class="header-navitem-sp"><a href="/concerts/upcoming/">開催予定の演奏会</a></li>
                     <li class="header-navitem-sp"><a href="/concerts/history/">演奏会の記録</a></li>
-                    <li class="header-navitem-sp"><a href="#">吹奏楽コンクールの記録</a></li>
+                    <li class="header-navitem-sp"><a href="/competition/">吹奏楽コンクールの記録</a></li>
                     <li class="header-navitem-sp"><a href="/joinus/">団員募集</a></li>
                     <li class="header-navitem-sp"><a href="/calendar/">活動日程</a></li>
                     <li class="header-navitem-sp"><a href="/sns/">SNS情報</a></li>
@@ -96,6 +96,8 @@
 
         <article class="section-article">
             <h2>- 募集パート -</h2>
+            <button id="toggleButton">募集パートを表示</button>
+            <div id="toggleDiv">
             （2024/05/14 現在）<br>
             オーディションはありません。
             <div class="table-conatiner">
@@ -234,8 +236,9 @@
                     </tr>
                 </table>
             </div>
-            <img class="tactle" src="/img/joinus/msg.png" alt="tactle">
-            <br><br>
+            <!-- <img class="tactle" src="/img/joinus/msg.png" alt="tactle">
+            <br><br> -->
+            </div>
         </article>
 
         <article class="section-article">
@@ -243,24 +246,10 @@
             団費 : 月額4,500円<br>
             ※ 演奏会費用などの別途徴収は原則ありません。<br>
             活動日程、場所は<a href="/calendar/" class="link">「活動日程」</a>をご参照ください。<br><br>
-        </article>
 
-        <article class="section-article">
-            <h2>- お問い合わせ -</h2>
-            <p>
-                Googleフォームからお気軽にお問い合わせください。<br />
-                また、下記のアドレスから直接メールでお問い合わせいただけます。<br />
-                メールにて直接お問い合せの際は、件名に問い合わせ内容をご記入ください。<br>
-                （“見学希望”、“入団希望”など）<br>
-                またメール本文にはお名前・楽器名・経験年数及び活動場所を明記してください。<br><br />
-                見学・入団に関するお問い合わせ : <a href="mailto:a.winds.nara.contact@gmail.com"
-                    class="link">a.winds.nara.contact@gmail.com</a>
-            </p>
-            <img class="tactle" src="/img/joinus/msg2.png" alt="tactle">
             <div class="section-button">
-                <a href="https://docs.google.com/forms/d/12cjffm5qKcYuAOjrbW9RYl_H7uoVkyKnIoOfRqxGiAM/viewform"
-                    class="contact-button" target="_blank" rel="noreferrer">
-                    見学・入団に関するお問い合わせ<br />（Googleフォームへ移動します）
+                <a href="/contact/" class="contact-button">
+                    お問い合わせはこちらから!  <img class="A" src="/img/tactle.png" alt="tactle">
                 </a>
             </div>
         </article>
@@ -307,6 +296,7 @@
     </footer>
 
     <script src="/js/scrollEffect.js"></script>
+    <script src="/js/display_button.js"></script>
 
 <script src="/js/headerEffect.js"></script>
 </body>
