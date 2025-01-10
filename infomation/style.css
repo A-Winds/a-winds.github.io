@@ -102,6 +102,7 @@ label, input, textarea, button {
 }
 /* .card-time {} */
 .card-headline {
+    font-size: 1.17rem;
     margin: 0;
 }
 .card-description {
