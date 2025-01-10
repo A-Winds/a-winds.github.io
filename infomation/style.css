@@ -105,7 +105,8 @@ label, input, textarea, button {
     margin: 0;
 }
 .card-description {
-    margin: 0 ;
+    text-align: left;
+    margin: 0.5rem ;
 }
 .section-button {
     margin-top: 40px;
