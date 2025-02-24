@@ -38,7 +38,7 @@ label, input, textarea, button {
 }
 .Section {
     color: #eee;
-    text-align: center;
+    text-align: left;
     padding: 0 5%;
     margin-bottom: 80px;
     padding-top: 60px;

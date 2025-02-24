@@ -68,7 +68,7 @@ label, input, textarea, button {
 .about-image {
   max-width: 60%;
 }
-.about-description {
+.section-description {
   text-align: left;
   max-width: 60%;
   margin: 0 auto;
@@ -213,7 +213,7 @@ label, input, textarea, button {
   .about-image {
     max-width: 90%;
   }
-  .about-description {
+  .section-description {
     max-width: 90%;
   }
   .section-button {
