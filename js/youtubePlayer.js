@@ -20,4 +20,7 @@ function changeVideo(videoId, element) {
 
     // 新しいビデオの詳細を表示
     document.getElementById(videoId).classList.add('active')
+
+    // スクロール
+    document.getElementById("top").scrollIntoView({ behavior: "smooth", block: "start" });
 }
