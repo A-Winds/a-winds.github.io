@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演奏曲一覧 | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site</title>
+    <meta name="description" content="A-Windsがこれまでに演奏した曲の一覧です。">
+    <!-- フォント関連 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS関連 -->
+    <link rel="stylesheet" href="/styles/headerfooter.css">
+    <link rel="stylesheet" href="/concerts/past_performances/style.css">
+    <!-- Favicon関連 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://a-winds.github.io/img/favicon/apple-touch-icon.png">
+    <link rel="icon" href="https://a-winds.github.io/img/favicon/favicon.ico" />
+    <link rel="manifest" href="https://a-winds.github.io/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://a-winds.github.io/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <!-- ogp -->
+    <meta property="og:url" content="https://a-winds.github.io/concerts/past_performances/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Past Performances | Concerts | A-Winds" />
+    <meta property="og:description" content="A-Windsがこれまでに演奏した曲の一覧です。" />
+    <meta property="og:site_name" content="A-Winds Official Web Site" />
+    <meta property="og:image" content="https://a-winds.github.io/img/ogimage.jpg" />
+    <!-- <meta property="fb:app_id" content=""> -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="max-image-preview:large">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-logo">
+            <a href="/"><img class="header-logo-img" src="/img/A-Winds_LOGO.svg" alt="A-Winds Logo" /></a>
+        </h1>
+        <nav class="header-nav-pc">
+            <ul class="header-navlist">
+                <li class="header-navitem"><a href="/">トップページ</a></li>
+                <li class="header-navitem"><a href="/infomation/">お知らせ</a></li>
+                <li class="header-navitem"><a tabindex="-1">演奏会情報</a>
+                    <ul>
+                        <li><a class="header-submenu" href="/concerts/upcoming/">＞開催予定の演奏会</a></li>
+                        <li><a class="header-submenu" href="/concerts/history/">＞演奏会の記録</a></li>
+                        <li><a class="header-submenu" href="/competition/">＞吹奏楽コンクールの記録</a></li>
+                        <li><a class="header-submenu" href="#">＞演奏曲一覧</a></li>
+                    </ul>
+                </li>
+                <li class="header-navitem"><a href="/joinus/">団員募集</a></li>
+                <li class="header-navitem"><a href="/calendar/">活動日程</a></li>
+                <li class="header-navitem"><a href="/sns/">SNS情報</a></li>
+                <li class="header-navitem"><a href="/contact/">お問い合わせ</a></li>
+            </ul>
+        </nav>
+        <div class="header-sp">
+            <input id="drawer-input" class="drawer-hidden" type="checkbox" />
+            <label for="drawer-input" class="drawer-open"><span></span></label>
+            <nav class="header-nav-sp">
+                <ul class="header-navlist-sp">
+                    <li class="header-navitem-sp"><a href="/">トップページ</a></li>
+                    <li class="header-navitem-sp"><a href="/infomation/">お知らせ</a></li>
+                    <li class="header-navitem-sp"><a href="/concerts/upcoming/">開催予定の演奏会</a></li>
+                    <li class="header-navitem-sp"><a href="/concerts/history/">演奏会の記録</a></li>
+                    <li class="header-navitem-sp"><a href="/competition/">吹奏楽コンクールの記録</a></li>
+                    <li class="header-navitem-sp"><a href="#">演奏曲一覧</a></li>
+                    <li class="header-navitem-sp"><a href="/joinus/">団員募集</a></li>
+                    <li class="header-navitem-sp"><a href="/calendar/">活動日程</a></li>
+                    <li class="header-navitem-sp"><a href="/sns/">SNS情報</a></li>
+                    <li class="header-navitem-sp"><a href="/contact/">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="header-margin"></div>
+
+    <div class="title">
+        <h1 class="headline">演奏曲一覧</h1>
+        <h2 class="headline-en">Past Performances</h2>
+    </div>
+
+    <section class="Section">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="曲名または作/編曲者で検索..." onkeyup="searchPieces()">
+            <button id="clear-search" onclick="clearSearch()">クリア</button>
+        </div>
+        <div class="controls">
+            <button onclick="toggleAll(true)">すべて展開</button>
+            <button onclick="toggleAll(false)">すべて閉じる</button>
+        </div>
+
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>RENAVIS <span style="font-size: 0.8rem;">by spelled of "NARA, A-WINDS"</span><br><span class="commissioned"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> 委嘱作品</span></span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw66/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">66" 創立25周年記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2024">2024年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>Chirche for Wind Orchestra<br><span class="commissioned"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> 委嘱作品</span></span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2017">2017年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>SUKU-SUKU<br><span class="commissioned"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> 委嘱作品</span></span> <span class="composer">前田 恵実</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2013">2013年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>Mindscape for Wind Orchestra<br><span class="commissioned"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> 委嘱作品</span></span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2006">2006年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw29/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">29" 2009年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>16世紀のシャンソンによる変奏曲</span> <span class="composer">諏訪 雅彦</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2009">2009年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>1941マーチ</span> <span class="composer">J.ウィリアムズ<br>arr. P.ラヴェンダー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>20世紀FOXファンファーレ</span> <span class="composer">A.ニューマン<br>arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>三つのジャポニズム<br><span style="font-size: 0.8rem;">1.鶴が舞う 2.雪の川 3.祭り</span></span> <span class="composer">真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2004">2004年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>5つの交響的描写「オセロ」</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>76本のトロンボーン</span> <span class="composer">J.ボコック</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アウェイデー</span> <span class="composer">A.ゴーブ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/ba2009/">BRASS AID 2009</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>あの日聞いた歌</span> <span class="composer">arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アフリカンシンフォニー</span> <span class="composer">V.マッコイ<br>arr. 岩井 直溥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アマポーラ</span> <span class="composer">arr. 小杉 比</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>あるアメリカ青年へのエレジー</span> <span class="composer">R.R.プレスティ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw23/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">23" 2007年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アルヴァマー序曲</span> <span class="composer">J.バーンズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アルセナール</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw35/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">35" 2011年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/ac2021/">Autumn Concert 2021</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アルプスの詩</span> <span class="composer">F.チェザリーニ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw6/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">6" 2001年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/competition/#2001">2001年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アルメニアンダンス・パートⅠ</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw63/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">63" 2023年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>アルメニアンダンス・パートII</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw63/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">63" 2023年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「あんたがたどこさ」の主題による幻想曲</span> <span class="composer">林 大地</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw58/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">58" 2019年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2019">2019年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>イーストコーストの風景</span> <span class="composer">N.ヘス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw33/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">33" 2011年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>祈りの旅</span> <span class="composer">北爪 道夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2004">2004年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>威風堂々第1番</span> <span class="composer">E.エルガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>今、吹き渡る風</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>IMAGE <span style="font-size: 0.8rem;">～A distance of the horizon～</span></span> <span class="composer">菊一 旭大</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>インカンテイション・アンド・ダンス</span> <span class="composer">J.B.チャンス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ウィークエンド・イン・ニューヨーク</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw58/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">58" 2019年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ヴィヴァ・ムジカ！</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ウィズ・ハート・アンド・ヴォイス</span> <span class="composer">D.R.ギリングハム</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2012">2012年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ウィナーズ <span style="font-size: 0.8rem;">吹奏楽のための行進曲</span></span> <span class="composer">諏訪 雅彦</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2003">2003年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ウインドブリッツ</span> <span class="composer">D.ブルジョワ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2010">2010年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ヴェスヴィアス</span> <span class="composer">F.ティケリ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ウエスト・サイド・ストーリー・<br class="for-sp">セレクション</span> <span class="composer">L.バーンスタイン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ヴェネチアの魔法</span> <span class="composer">M.エレビー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw23/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">23" 2007年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>上を向いて歩こう</span> <span class="composer">中村 八大<br>arr. 天野 正道</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/ac2021/">Autumn Concert 2021</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>宇宙の音楽</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2015">2015年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>船乗りと海の歌<br><span style="font-size: 0.8rem;">（海の男達の歌）</span></span> <span class="composer">R.W.スミス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw18/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">18" 2005年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>海の肖像</span> <span class="composer">H.ラガッシー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw6/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">6" 2001年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>海へ．．．吹奏楽のために</span> <span class="composer">三澤 慶</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2006">2006年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>A列車で行こう</span> <span class="composer">arr. 岩井 直溥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エアーズ</span> <span class="composer">田嶋 勉</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エクストリーム・メイクオーヴァー</span> <span class="composer">J.デ=メイ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2016">2016年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エル・カミーノ・レアル</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw33/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">33" 2011年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw58/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">58" 2019年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エルキャピタン</span> <span class="composer">J.P.スーザ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エルサレム讃歌</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw65/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">65" 2023年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エルサロンメヒコ</span> <span class="composer">A.コープランド</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>エンターテインメント・マーチ</span> <span class="composer">川北 栄樹</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>オーメンズ・オブ・ラブ</span> <span class="composer">和泉 宏隆<br>arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw58/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">58" 2019年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>大阪俗謡による幻想曲</span> <span class="composer">大栗 裕<br>arr. 辻井 清幸</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2009">2009年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>オリエント急行</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>オリンピックファンファーレ＆テーマ</span> <span class="composer">J.ウィリアムズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw17/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">17" 2005年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>音楽祭のプレリュード</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>女城主直虎サントラより</span> <span class="composer">菅野 よう子</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>カーペンターズ・フォーエバー</span> <span class="composer">arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/ac2021/">Autumn Concert 2021</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「カヴァレリア・ルスティカーナ」より<br class="for-sp">間奏曲</span> <span class="composer">P.マスカーニ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>学園序曲</span> <span class="composer">佐藤 長助</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>風がきらめくとき</span> <span class="composer">近藤 礼隆</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2024">2024年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>カドリーユ</span> <span class="composer">後藤 洋</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>枯葉</span> <span class="composer">J.コスマ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>カンタベリー・コラール</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw35/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">35" 2011年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw66/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">66" 創立25周年記念演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>キャンディード序曲</span> <span class="composer">L.バーンスタイン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw33/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">33" 2011年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>宮廷風アリアと舞曲</span> <span class="composer">R.ネルソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>狂詩曲「ノヴェナ」</span> <span class="composer">J.スウェアリンジェン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>キラキラ星変奏曲</span> <span class="composer">arr. 天野 正道</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>銀河鉄道999</span> <span class="composer">arr. 樽屋 雅徳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>キング・コットン</span> <span class="composer">J.P.スーザ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>組曲「ルーブルの情景」</span> <span class="composer">N.D.ジョイオ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2000年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>クラウドバースト</span> <span class="composer">E.ウィテカー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>クリスマスフェスティヴァル</span> <span class="composer">L.アンダーソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw1/"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> デビュー演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>クリスマス・メドレー</span> <span class="composer">L.アンダーソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ゲール・フォース</span> <span class="composer">P.グラハム</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>軽騎兵序曲</span> <span class="composer">F.V.スッペ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>元禄</span> <span class="composer">櫛田 てつ之扶</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ゴースト・トレイン</span> <span class="composer">E.ウィテカー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響曲第1番「ストーンヘンジ」</span> <span class="composer">P.W.ホエアー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2000年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2000">2000年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響曲第三番</span> <span class="composer">J.バーンズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw35/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">35" 2011年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw59/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">59" 2019年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響曲より第4楽章</span> <span class="composer">矢代 秋雄</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2018">2018年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響組曲</span> <span class="composer">C.ウィリアムズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響組曲「GR」より<br class="for-sp">シンフォニックセレクション</span> <span class="composer">天野 正道</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw11/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">11" 2003年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響詩「スパルタカス」</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響詩「ローマの松」</span> <span class="composer">O.レスピーギ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響的情景「地底旅行」</span> <span class="composer">P.グレイアム</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw33/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">33" 2011年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2014">2014年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響的序曲</span> <span class="composer">J.バーンズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                    <li><a href="/concerts/history/aw35/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">35" 2011年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>交響的舞曲第3番「フィエスタ」</span> <span class="composer">C.ウィリアムズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「秋空に」</span> <span class="composer">上岡 洋一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「SLが行く」</span> <span class="composer">若杉 海一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw6/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">6" 2001年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2001">2001年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「カーニバル・ディ」</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「旧友」</span> <span class="composer">C.タイケ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「剣士の入場」</span> <span class="composer">J.フチーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「木陰の散歩道」</span> <span class="composer">E.F.ゴールドマン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>行進曲「ナヴァル・ブルー」</span> <span class="composer">真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/ba2009/">BRASS AID 2009</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>高度な技術への指標</span> <span class="composer">河辺 公一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ゴッドスピード</span> <span class="composer">S.メリロ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>コパカバーナ</span> <span class="composer">arr. 岩井 直溥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw29/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">29" 2009年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>コンサートマーチ「煌めきの朝」</span> <span class="composer">牧野 圭吾</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2023">2023年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>コンサート・ミニアチュア</span> <span class="composer">R.ミッチェル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>サーカスハットマーチ</span> <span class="composer">奥本 伴在</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>斎太郎節の主題による幻想</span> <span class="composer">合田 佳代子</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2014">2014年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「サウンド・オブ・ミュージック」ハイライト</span> <span class="composer">樽屋 雅徳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw60/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">60" 2022年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>さくらのうた</span> <span class="composer">福田 洋介</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>サセックスの仮装行列による<br class="for-sp">クリスマス・キャロル</span> <span class="composer">P.A.グレインジャー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ザ・バンドワゴン</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>サマータイム</span> <span class="composer">G.ガーシュイン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>サモン・ザ・ドラゴン</span> <span class="composer">P.グレイアム</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>サンタ・フェ物語</span> <span class="composer">M.グールド</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2000年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw19/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">19" 2005年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>SEA OF WISDOM ～知恵を持つ海～</span> <span class="composer">清水 大輔</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シーゲート</span> <span class="composer">J.スウェアリンジェン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ジェネシス</span> <span class="composer">鈴木 英史</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2022">2022年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シェパーズ・ヘイ！</span> <span class="composer">P.A.グレインジャー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ジャマイカ民謡組曲</span> <span class="composer">H.L.ウォルターズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シューマンの主題による変奏曲</span> <span class="composer">R.ジェイガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>祝典序曲「オリンピカ」</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>祝典のための音楽</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw18/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">18" 2005年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ジュビラーテ</span> <span class="composer">R.ジェイガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw1/"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> デビュー演奏会</a></li>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ジュビリー序曲</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>主よ、人の望みの喜びを</span> <span class="composer">J.S.バッハ<br>arr. A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>情熱大陸セレクション</span> <span class="composer">葉加瀬 太郎<br>arr. 石毛 理佳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>序曲「バラの謝肉祭」</span> <span class="composer">J.オリヴァドーティ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/wc2020/">Winter Concert 2020</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>序奏とカプリス</span> <span class="composer">C.カーター</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シンフォニア・ノビリッシマ</span> <span class="composer">R.ジェイガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シンフォニエッタ第3番「響きの森」</span> <span class="composer">福島 弘和</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2023">2023年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シンフォニエッタ第5番「火焔の鳥」</span> <span class="composer">福島 弘和</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>シンフォニック・ムーブメント</span> <span class="composer">V.ネリベル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための一章</span> <span class="composer">堀内 俊男</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための「エール・マーチ」</span> <span class="composer">宮下 秀樹</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw60/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">60" 2022年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための綺想曲「じゅげむ」</span> <span class="composer">足立 正</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2012">2012年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための組曲第二番<br class="for-sp">「イル・フィラート」</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/ac2021/">Autumn Concert 2021</a></li>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2022">2022年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための交響的音頭</span> <span class="composer">兼田 敏</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための序曲</span> <span class="composer">坂田 雅弘</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw29/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">29" 2009年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための神話</span> <span class="composer">大栗 裕</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw5/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">5" 2001年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための第一組曲</span> <span class="composer">G.ホルスト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw1/"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> デビュー演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための第二組曲</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための第二組曲へ長調 Op.28</span> <span class="composer">G.ホルスト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための「天地人」</span> <span class="composer">和田 薫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2002">2002年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための「北海変奏曲」</span> <span class="composer">伊藤 康英</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための民謡「うちなーのてぃだ」</span> <span class="composer">長野 雄行</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2010">2010年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための民話</span> <span class="composer">J.A.コーディル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のためのラメント</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2002">2002年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/ba2013/">BRASS AID 2013</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>吹奏楽のための「ワルツ」</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2018">2018年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>スクーティン・オン・ハード・ロック</span> <span class="composer">D.R.ホールジンガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>スター・ウォーズ・サガ</span> <span class="composer">J.ウィリアムズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ストームワークス</span> <span class="composer">S.メリロ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw29/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">29" 2009年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>スペインの市場で</span> <span class="composer">山本 雅一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw49/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">49" 2016年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2016">2016年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>星条旗よ永遠なれ</span> <span class="composer">J.P.スーザ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw30/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">30" 2010年 春の記念演奏会</a></li>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>雪月花</span> <span class="composer">櫛田 てつ之扶</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>セント・アンソニー・ヴァリエーション</span> <span class="composer">W.ヒル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「千と千尋の神隠し」ハイライト</span> <span class="composer">久石 譲</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>第三組曲「バレエの情景」</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw1/"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> デビュー演奏会</a></li>
+                    <li><a href="/concerts/history/aw19/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">19" 2005年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>第六の幸福をもたらす宿</span> <span class="composer">M.アーノルド</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>タイタニック・サガ</span> <span class="composer">P.スウェルツ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>大仏と鹿</span> <span class="composer">酒井 格</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>Time To Say Goodbye</span> <span class="composer">D.キャンベル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>タイムリメンバード</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ダイヤモンドヴァリエーションズ</span> <span class="composer">R.ジェイガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>打楽器とバンドのための協奏曲</span> <span class="composer">R.ジェイガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>宝島</span> <span class="composer">和泉 宏隆<br>arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw65/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">65" 2023年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>たなばた</span> <span class="composer">酒井 格</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2019年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw18/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">18" 2005年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>Dancing and Drumming</span> <span class="composer">T.スサート</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ダンス・オブ・ザ・ニュー・ワールド</span> <span class="composer">D.ウィルソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ダンス・セレブレーション</span> <span class="composer">建部 知弘</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw63/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">63" 2023年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ダンス・ムーブメント</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2007">2007年 吹奏楽コンクール</a></li>
+                    <li><a href="/concerts/history/aw63/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">63" 2023年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>チャップリンの肖像</span> <span class="composer">arr. 星出 尚志</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/ac2021/">Autumn Concert 2021</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>朝鮮民謡の主題による変奏曲</span> <span class="composer">J.B.チャンス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>蝶々夫人</span> <span class="composer">G.プッチーニ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「追憶」のテーマ</span> <span class="composer">M.ハムリッシュ<br>arr. 浦田 健次郎</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>月への12秒</span> <span class="composer">R.W.スミス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw1/"><img class="A" src="/img/A-Winds.svg" alt="A-Winds"> デビュー演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ディスコ・キッド</span> <span class="composer">東海林 修</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ディズニー・メドレー</span> <span class="composer">arr. 岩井 直溥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>デジタルプリズム</span> <span class="composer">L.クラーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>テューバ協奏曲「Concertino」</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw66/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">66" 創立25周年記念演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>デリー州の調べ</span> <span class="composer">P.A.グレインジャー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>道祖神の詩</span> <span class="composer">福島 弘和</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2000年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2000">2000年 吹奏楽コンクール</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>塔の上のラプンツェル</span> <span class="composer">A.メンケン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw59/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">59" 2019年 冬の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>動物園の１日</span> <span class="composer">J.カーノウ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw19/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">19" 2005年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ど演歌えきすぷれす</span> <span class="composer">arr. 杉浦 邦弘</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>トリティコ</span> <span class="composer">V.ネリベル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>トロンボーンのための「カラーズ」</span> <span class="composer">B.アッペルモント</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>波の見える風景（改定新版）</span> <span class="composer">真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>日本の情景【秋】</span> <span class="composer">arr. 山下 国俊</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw16/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">16" 2004年 秋の演奏会</a></li>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>日本の情景【春】</span> <span class="composer">arr. 山下 国俊</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>日本民謡組曲 わらべうた</span> <span class="composer">兼田 敏</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw7/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">7" 2001年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ニュー・シネマ・パラダイス</span> <span class="composer">E.モリコーネ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw68/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">68" 2024年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「ノートルダムの鐘」より</span> <span class="composer">arr. 森田 一浩</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw65/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">65" 2023年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ノアの箱舟</span> <span class="composer">B.アッペルモント</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw6/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">6" 2001年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw10/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">10" 2002年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ハイランド讃歌組曲</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw36/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">36" 2012年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw60/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">60" 2022年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>パヴァーヌ</span> <span class="composer">M.ラヴェル<br>arr. 真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>はとポッポの世界旅行！</span> <span class="composer">arr. 杉浦 邦弘</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/ba2013/">BRASS AID 2013</a></li>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>花は咲く</span> <span class="composer">菅野 よう子</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ハノーヴァーの祭典</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw6/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">6" 2001年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw18/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">18" 2005年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>バラード</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「薔薇戦争」より"戦場にて"</span> <span class="composer">山口 哲人</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ハリソンの夢</span> <span class="composer">P.グレイアム</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw27/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">27" 2008年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2008">2008年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>パリのアメリカ人</span> <span class="composer">G.ガーシュイン<br>arr. 岩井 直溥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw25/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">25" 2007年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>パリのスケッチ</span> <span class="composer">M.エレビー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw31/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">31" 2010年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>春風の通り道</span> <span class="composer">西山 知宏</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2017">2017年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>春になって、<br>王たちが戦いに出るにおよんで</span> <span class="composer">D.R.ホールジンガー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw17/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">17" 2005年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>春の猟犬</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw66/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">66" 創立25周年記念演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>バレエ組曲「ガイーヌ」より</span> <span class="composer">A.I.ハチャトリアン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw17/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">17" 2005年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw33/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">33" 2011年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw52/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">52" 2017年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>バレエ組曲「くるみ割り人形」</span> <span class="composer">P.I.チャイコフスキー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw15/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">15" 2004年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw28/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">28" 2008年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>バレエ組曲「シバの女王ベルキス」</span> <span class="composer">O.レスピーギ<br>arr. 木村 吉宏</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+                    <li><a href="/concerts/history/aw53/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">53" 2017年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>パンソリック・ラプソディ</span> <span class="composer">高 昌帥</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>パンチネロ<span style="font-size: 0.8rem;">ロマンティック・コメディのための序曲</span></span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw23/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">23" 2007年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ハンティンドン・セレブレーション</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw43/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">43" 2014年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw60/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">60" 2022年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>バンドのためのシンフォニックソング</span> <span class="composer">R.R.ベネット</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ピアノと吹奏楽のための協奏的組曲</span> <span class="composer">八木澤 教司</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ピアノと吹奏楽のための琉球幻想曲</span> <span class="composer">伊藤 康英</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>美術館の一日</span> <span class="composer">J.カーナウ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw11/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">11" 2003年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>火の断章</span> <span class="composer">井澗 昌樹</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2008">2008年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>日はまた昇る</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ファンファーレとアレグロ</span> <span class="composer">C.ウィリアムズ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フィエスタ！</span> <span class="composer">P.スパーク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw47/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">47" 2015年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フィドル・ファドル</span> <span class="composer">L.アンダーソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>風紋</span> <span class="composer">保科 洋</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>楓葉の舞</span> <span class="composer">長生 淳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw58/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">58" 2019年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2019">2019年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フェスティーヴォ</span> <span class="composer">V.ネリベル</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フェスティバル・ヴァリエーション</span> <span class="composer">C.T.スミス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2011">2011年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>富士山<span style="font-size: 0.8rem;">〜北斎の版画に触発されて〜</span></span> <span class="composer">真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw57/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">57" 2019年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>舞踏会の美女</span> <span class="composer">L.アンダーソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw20/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">20" 2006年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フニクリ・フニクラ狂詩曲</span> <span class="composer">L.デンツァ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>舞踊音楽「ラ・ペリ」へのファンファーレ</span> <span class="composer">P.デュカ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>プラトンの洞窟からの脱出</span> <span class="composer">S.メリロ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ブラボー・ブラス!</span> <span class="composer">星出 尚志</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw42/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">42" 2014年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>プリズム</span> <span class="composer">S.シェーファー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw11/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">11" 2003年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>フルートのためのコンチェルティーノ</span> <span class="composer">C.シャミナーデ<br>arr. C.ウィルソン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ふるさと</span> <span class="composer">岡野 貞一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/charity2017/">チャリティーコンサート 2017</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>プロヴァンスの風</span> <span class="composer">田坂 直樹</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ブロックＭ</span> <span class="composer">J.H.ビリック</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ポンテ・ロマーノ</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マーチ「春風」</span> <span class="composer">南 俊明</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2005">2005年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マーチ「春の道を歩こう」</span> <span class="composer">佐藤 邦宏</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2015">2015年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マーチ「ブルースカイ」</span> <span class="composer">高木 登古</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw24/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">24" 2007年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2007">2007年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マーチ・メドレー</span> <span class="composer">arr. 杉浦 邦弘</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw29/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">29" 2009年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マーチ・ワンダフル・ヴォヤージュ</span> <span class="composer">一ノ瀬 季生</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マイ・ウェイ</span> <span class="composer">C.フランソワ<br>J.ルヴォー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マゼランの未知なる大陸への挑戦</span> <span class="composer">樽屋 雅徳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マリンバとパーカッションのための協奏曲</span> <span class="composer">N.ロサウロ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw17/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">17" 2005年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マンハッタン交響曲</span> <span class="composer">S.ランセン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw11/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">11" 2003年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw32/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">32" 2010 Autumn Concert</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>マンボ</span> <span class="composer">L.バーンスタイン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw44/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">44" 2014年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw63/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">63" 2023年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>三日月に架かるヤコブのはしご</span> <span class="composer">真島 俊夫</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw26/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">26" 2008年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw46/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">46" 2015年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>道・希望へ</span> <span class="composer">福島 弘和</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw50/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">50" 2016年 冬の記念演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ミッキーマウスマーチ</span> <span class="composer">arr. 星出 尚志</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw62/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">62" 2022年 冬の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>南風のマーチ</span> <span class="composer">渡口 公康</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw34/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">34" 2011年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2011">2011年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>Music in the Air!</span> <span class="composer">A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw39/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">39" 2013年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ムーアサイド組曲</span> <span class="composer">G.ホルスト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw14/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">14" 2004年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>メキシコの祭り</span> <span class="composer">H.O.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw9/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">9" 2002年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw23/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">23" 2007年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw65/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">65" 2023年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>目覚めよと呼ぶ声あり</span> <span class="composer">J.S.バッハ<br>arr. A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw61/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">61" 2022年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>メトセラⅡ 打楽器群と吹奏楽のために</span> <span class="composer">田中 賢</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw21/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">21" 2006年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>メルビルの「水夫と鯨」から 5つの情景より</span> <span class="composer">F.マクベス</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw12/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">12" 2003年 夏の演奏会</a></li>
+                    <li><a href="/competition/#2003">2003年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>メルヘン</span> <span class="composer">酒井 格</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw67/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">67" 2024年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>メロディ・ショップ</span> <span class="composer">K.L.キング<br>arr. A.グローヴァー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw3/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">3" 2000年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw19/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">19" 2005年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>森の贈り物</span> <span class="composer">酒井 格</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw48/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">48" 2016年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw64/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">64" 2023年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>モンタニャールの詩</span> <span class="composer">J.ヴァン=デル=ロースト</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw51/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">51" 2017年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>山の音楽家</span> <span class="composer">arr. 小島 里美</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw56/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">56" 2018年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>夢やぶれて</span> <span class="composer">C.M.シェーンベルク</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw11/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">11" 2003年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw38/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">38" 2012年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ラザロの復活</span> <span class="composer">樽屋 雅徳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw18/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">18" 2005年 夏の演奏会</a></li>
+                    <li><a href="/concerts/history/aw19/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">19" 2005年 秋の演奏会</a></li>
+                    <li><a href="/competition/#2005">2005年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ラ・スペランツァ～希望</span> <span class="composer">樽屋 雅徳</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw55/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">55" 2018年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ラデツキー行進曲</span> <span class="composer">J.シュトラウスⅠ<br>arr. A.リード</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/jb2009/">Joyful Brass 2009</a></li>
+                    <li><a href="/concerts/history/aw37/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">37" 2012年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>リバーダンス</span> <span class="composer">B.ウィーラン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw13/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">13" 2003年 冬の演奏会</a></li>
+                    <li><a href="/concerts/history/aw54/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">54" 2018年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>流沙</span> <span class="composer">広瀬 正憲</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/competition/#2013">2013年 吹奏楽コンクール</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「稜線の風」～北アルプスの印象～</span> <span class="composer">八木澤 教司</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw17/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">17" 2005年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>レヴィヤタン(リヴァイアサン)～ある破滅への啓示</span> <span class="composer">F.チェザリーニ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw4/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">4" 2000年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>「レ・ミゼラブル」よりセレクション</span> <span class="composer">arr. W.バーカー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw41/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">41" 2013年 秋の演奏会</a></li>
+                    <li><a href="/concerts/history/aw60/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">60" 2022年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ロビンソンの堂々たる入場</span> <span class="composer">K.L.キング</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ロマネスク</span> <span class="composer">J.スウェアリンジェン</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw8/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">8" 2002年 春の演奏会</a></li>
+                    <li><a href="/concerts/history/aw40/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">40" 2013年 夏の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ロンドンデリーの歌</span> <span class="composer">P.グレインジャー</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw45/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">45" 2015年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>ワシントン・ポスト</span> <span class="composer">J.P.スーザ</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw22/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">22" 2006年 秋の演奏会</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="piece" onclick="toggleConcerts(this)">
+            <div class="piece-header">
+                <span>をどり唄</span> <span class="composer">柏崎 真一</span>
+            </div>
+            <div class="concerts">
+                <ul>
+                    <li><a href="/concerts/history/aw2/">"<img class="A" src="/img/A-Winds.svg" alt="A-Winds">2" 2000年 春の演奏会</a></li>
+                </ul>
+            </div>
+        </div>        
+    </section>
+
+    <footer class="footer">
+        <figure class="footer-logo">
+            <img class="footer-logo-img" src="/img/A-Winds_LOGO.svg" height="100" alt="A-winds Logo" />
+            <figcaption class="footer-logo-name">
+                A-Winds 奈良アマチュアウィンドオーケストラ<br />
+                Official Web Site
+            </figcaption>
+        </figure>
+        <hr class="footer-line">
+        <div class="footer-sns_headline">
+            <h2 class="footer-sns_title">A-Winds SNSアカウント</h2>
+            <ul class="footer-sns">
+                <li class="footer-sns-icon">
+                    <a href="https://youtube.com/@AWinds" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/yt_icon_pms.png" alt="A-Winds YouTube" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://www.facebook.com/A.Winds.Nara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/Facebook_Logo_Primary.png"
+                            alt="A-Winds Facebook" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://twitter.com/A_WindsNara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/logo-black.png" alt="A-Winds X" />
+                    </a>
+                </li>
+                <li class="footer-sns-icon">
+                    <a href="https://www.instagram.com/a_winds_nara" target="_blank" rel="noreferrer">
+                        <img class="footer-sns-icon-img" src="/img/sns_icons/Instagram_Glyph_Gradient.png"
+                            alt="A-Winds Instagram" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <hr class="footer-line">
+        <small class="footer-copy">Copyright © 2024-2025 A-Winds all rights reserved.</small>
+    </footer>
+<script src="/js/pastPerformances.js"></script>
+<script src="/js/headerEffect.js"></script>
+</body>
+
+</html>

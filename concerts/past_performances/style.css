@@ -1,0 +1,180 @@
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: #111;
+    margin: 0;
+}
+label, input, textarea, button {
+    cursor: pointer;
+}
+.title {
+    padding-top: 60px;
+    color: #eee;
+    text-align: center;
+    background-image: url('/img/thumb.png');
+    background-size: cover;
+    background-position: center;
+}
+.headline {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: bold;
+    margin: 40px 0 10px 0;
+    }
+.headline-en {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    display: inline-block;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+    width: 70%;
+}
+.Section {
+    color: #eee;
+    text-align: center;
+    padding: 0 5%;
+    margin-bottom: 80px;
+    padding-top: 60px;
+}
+.A {
+    color: #ea2f2fff;
+    height: 1.4rem;
+    vertical-align: middle;
+    margin-top: -4px;
+}
+.search-container {
+    align-items: center;
+    margin-bottom: 20px;
+}
+#search {
+    width: 25%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #555;
+    background: #333;
+    color: #eee;
+    cursor: text;
+}
+#clear-search {
+    padding: 10px;
+    background: #333;
+    color: #eee;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px #000;
+    transition: box-shadow .1s;
+}
+#clear-search:hover {
+    background: #222;
+    color: #ea2f2fff;
+    box-shadow: 0 0 0 0 #000;
+}
+.controls button {
+    min-width: 10%;
+    padding: 10px;
+    background: #333;
+    color: #eee;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 1px #000;
+    transition: box-shadow .1s;
+}
+.controls button:hover {
+    background: #222;
+    color: #ea2f2fff;
+    box-shadow: 0 0 0 0 #000;
+}
+.piece {
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+    cursor: pointer;
+}
+.piece-header {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+}
+.composer {
+    font-size: 0.9em;
+    color: #eee;
+    text-align: right;
+}
+.concerts {
+    max-height: 0;
+    overflow: hidden;
+    background: #333;
+    border-left: 3px solid #ea2f2fff;
+    margin-top: 5px;
+    text-align: left;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+.concerts.open {
+    max-height: 200px;
+    padding: 10px;
+}
+.concerts li {
+    list-style-type: none;
+    margin-bottom: 5px;
+}
+.concerts a {
+    color: #eee;
+    text-decoration: none;
+}
+.concerts a:hover {
+    color: #ea2f2fff;
+}
+.commissioned {
+    font-size: 0.8em;
+}
+.commissioned img {
+    height: 1.2rem;
+    margin-top: -4px;
+    vertical-align: middle;
+}
+.hidden {
+    display: none;
+}
+.for-sp {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 13px;
+    }
+    .title {
+        padding-top: 3px;
+    }
+    .headline {
+        margin: 20px 0 5px 0;
+    }
+    .headline-en {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .section-image {
+        max-width: 95%;
+    }
+    .section-description {
+        max-width: 95%;
+    }
+    .piece {
+        max-width: 95%;
+    }
+    #search {
+        width: 60%;
+    }
+    .for-sp {
+        display: inline;
+    }
+}

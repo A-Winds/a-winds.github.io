@@ -151,9 +151,15 @@ label, input, textarea, button {
     padding: 10px;
     cursor: pointer;
 }
+.result-box-dummy {
+    scroll-margin-top: 100px;
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
 .result-content {
     display: flex;
-    /* justify-content: space-between; */
     text-align: left;
     align-items: center;
     font-size: 1rem;
@@ -161,6 +167,13 @@ label, input, textarea, button {
 }
 .result-content:hover {
     color: #ea2f2fff;
+}
+.result-content-dummy {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 1rem;
+    color: #eee;
 }
 .year {
     min-width: 2.5em;
@@ -208,7 +221,15 @@ label, input, textarea, button {
         max-width: 100%;
         margin: 0 auto;
     }
+    .result-box-dummy {
+        scroll-margin-top: 60px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
     .result-content {
+        font-size: 0.8rem;
+    }
+    .result-content-dummy {
         font-size: 0.8rem;
     }
     .year {
