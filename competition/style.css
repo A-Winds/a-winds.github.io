@@ -142,6 +142,52 @@ label, input, textarea, button {
 .copper {
     color: #b87333;
 }
+
+.result-box {
+    scroll-margin-top: 100px;
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+    cursor: pointer;
+}
+.result-box-dummy {
+    scroll-margin-top: 100px;
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
+.result-content {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 1rem;
+    color: #eee;
+}
+.result-content:hover {
+    color: #ea2f2fff;
+}
+.result-content-dummy {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 1rem;
+    color: #eee;
+}
+.year {
+    min-width: 2.5em;
+    text-align: left;
+    margin-right: 2em;
+}
+.piece {
+    text-align: left;
+    flex-shrink: 0;
+}
+.result {
+    margin-left: auto;
+    text-align: right;
+}
 @media screen and (max-width: 850px) {
     html {
         font-size: 13px;
@@ -156,6 +202,10 @@ label, input, textarea, button {
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
+    .Section {
+        margin-bottom: 30px;
+        padding-top: 30px;
+    }
     .section-description {
         max-width: 95%;
     }
@@ -165,5 +215,24 @@ label, input, textarea, button {
     }
     .player, #videoList {
         width: 95%;
+    }
+    .result-box {
+        scroll-margin-top: 60px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .result-box-dummy {
+        scroll-margin-top: 60px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .result-content {
+        font-size: 0.8rem;
+    }
+    .result-content-dummy {
+        font-size: 0.8rem;
+    }
+    .year {
+        margin-right: 1em;
     }
 }
