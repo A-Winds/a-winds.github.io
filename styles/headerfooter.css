@@ -199,7 +199,7 @@ ul.header-navlist li ul li {
 .footer {
     font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     width: 100%;
-    background-image: url(/img/footer_back.jpg);
+    background-image: url(/img/footer_back.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

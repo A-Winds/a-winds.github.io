@@ -15,7 +15,7 @@ label, input, textarea, button {
 .Top {
   width: 100%;
   object-fit: cover;
-  background-image: url('/img/top_img_background.png');
+  background-image: url('/img/top_img_background.webp');
   background-size: cover;
   background-position: center;
 }
