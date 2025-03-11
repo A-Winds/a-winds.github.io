@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-jpg, pngファイルをwebpファイルに変換するします.
+jpg, pngファイルをwebpファイルに変換します.
 
 使用上の注意
 - 異なるディレクトリに同じファイル名の画像がある場合, 正常に動作しない可能性があります.
@@ -22,32 +22,49 @@ EXCLUDE_FILES = [
     'img/ogimage.jpg',
 ]
 
-# jpgとpngファイルを取得
-files = glob.glob('**/*.jpg', recursive=True) + glob.glob('**/*.JPG', recursive=True) + glob.glob('**/*.png', recursive=True)
-files_html_css = glob.glob('**/*.html', recursive=True) + glob.glob('**/*.css', recursive=True)
+def main():
+    # 全変換
+    # convert_all()
 
-for i in tqdm(range(len(files))):
-    f = files[i]
+    # 1ファイルのみ変換
+    convert_1img('img/concert/76-AW70.JPG')
 
-    if f in EXCLUDE_FILES:
-        continue
+def convert_all():
+    # jpgとpngファイルを取得
+    files = glob.glob('**/*.jpg', recursive=True) + glob.glob('**/*.JPG', recursive=True) + glob.glob('**/*.png', recursive=True)
+    files_html_css = glob.glob('**/*.html', recursive=True) + glob.glob('**/*.css', recursive=True)
 
-    # webpファイルへ変換
-    img = Image.open(f)
-    img.save(f.replace('.jpg', '.webp').replace('.JPG', '.webp').replace('.png', '.webp'), 'WEBP')
+    for i in tqdm(range(len(files))):
+        f = files[i]
 
-    # jpg, pngファイルを削除
-    os.remove(f)
+        if f in EXCLUDE_FILES:
+            continue
 
-    # ファイルパスからファイル名だけを取得(拡張子もなし)
-    file_name = os.path.splitext(f)[0]
+        # webpファイルへ変換
+        img = Image.open(f)
+        img.save(f.replace('.jpg', '.webp').replace('.JPG', '.webp').replace('.png', '.webp'), 'WEBP')
 
-    # html, cssファイル内のファイルパスを変更
-    for f_html_css in files_html_css:
-        with open(f_html_css, 'r') as f:
-            text = f.read()
-            text = re.sub(f'{file_name}.jpg', f'{file_name}.webp', text)
-            text = re.sub(f'{file_name}.JPG', f'{file_name}.webp', text)
-            text = re.sub(f'{file_name}.png', f'{file_name}.webp', text)
-        with open(f_html_css, 'w') as f:
-            f.write(text)
+        # jpg, pngファイルを削除
+        os.remove(f)
+
+        # ファイルパスからファイル名だけを取得(拡張子もなし)
+        file_name = os.path.splitext(f)[0]
+
+        # html, cssファイル内のファイルパスを変更
+        for f_html_css in files_html_css:
+            with open(f_html_css, 'r') as f:
+                text = f.read()
+                text = re.sub(f'{file_name}.jpg', f'{file_name}.webp', text)
+                text = re.sub(f'{file_name}.JPG', f'{file_name}.webp', text)
+                text = re.sub(f'{file_name}.png', f'{file_name}.webp', text)
+            with open(f_html_css, 'w') as f:
+                f.write(text)
+
+def convert_1img(inputfile):
+    img = Image.open(inputfile)
+    img.save(inputfile.replace('.jpg', '.webp').replace('.JPG', '.webp').replace('.png', '.webp'), 'WEBP')
+
+    print(f'`{inputfile}` → `{inputfile.replace(".jpg", ".webp").replace(".JPG", ".webp").replace(".png", ".webp")}`')
+
+if __name__ == '__main__':
+    main()
