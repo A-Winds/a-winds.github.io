@@ -5,6 +5,9 @@ A-Windsのホームページのリポジトリです。<br>
 あと作成時期の違いによってコードのインデントが2文字のやつと4文字のやつがあります。汚くてすみません。<br>
 他にもコードに汚い部分が多いので今後リファクタリングをちゃんとやります。
 
+## 更新作業について
+[こちらのColab](https://colab.research.google.com/drive/16ffJkQLPzGrMclAfSTOu3z1oa4cWhsCJ?usp=sharing)でコーディングなしで更新作業をできるようにしています。
+
 ## Github Pagesについて
 ### 1. できること
 静的なサイトのデプロイが無料でできます。<br>
