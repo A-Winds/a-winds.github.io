@@ -1,7 +1,7 @@
 //YouTubeプレーヤーの動画を変更するやつ
 function changeVideo(videoId, element) {
     // 動画を変更
-    document.getElementById('mainPlayer').src = `https://www.youtube.com/embed/${videoId}?modestbranding=1&widget_referrer`;
+    document.getElementById('mainPlayer').src = `https://www.youtube.com/embed/${videoId}`;
 
     // 現在のアクティブなリストアイテムを探してクラスを削除
     const activeItem = document.querySelector('#videoList li.active');
