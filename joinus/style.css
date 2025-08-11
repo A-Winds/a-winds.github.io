@@ -67,56 +67,47 @@ label, input, textarea, button {
 .msg-sp {
     display: none;
 }
-#toggleButton {
-    font-family: "Noto Serif JP", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
-    width: 30%;
-    border: 0;
-    color: #eee;
-    display: inline-block;
-    font-weight: bold;
-    background-color: #333;
-    text-align: center;
-    padding: 15px 60px;
-    text-decoration: none;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px #000;
-    transition: box-shadow .2s;
-}
-#toggleButton:hover {
-    color: #ea2f2fff;
-    box-shadow: 0 0 0 #000;
-}
-/* #toggleDiv {
-    display: none;
-    margin-top: 2rem;
-} */
-#toggleDiv {
-    max-height: 0; /* 初期状態で非表示 */
-    opacity: 0;
-    overflow: hidden;
-    margin-top: 20px;
-    padding: 0 10px;
-    /* border: 1px solid black;
-    background-color: #f9f9f9; */
-    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
-}
-
-#toggleDiv.show {
-    max-height: 50rem; /* 表示時の最大高さ */
-    opacity: 1;
-    padding: 10px; /* paddingもアニメーションで調整 */
-}
 .table-conatiner {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
-table {
-    border-collapse: collapse;
+.part-table-header {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
 }
-th, td {
-    padding: 0 15px;
-    border: 1px solid #eee;
+.part-table-header span {
+    font-weight: bold;
+}
+.part-table {
+    display: flex;
+    max-width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
+.part-table:hover {
+    background-color: #222;
+}
+.part {
+    width: 45%;
+    text-align: center;
+    margin-right: 2em;
+    flex-shrink: 0;
+}
+.capacity {
+    width: 15%;
+    text-align: center;
+}
+.current {
+    width: 15%;
+    text-align: center;
+}
+.recruiting {
+    width: 15%;
     text-align: center;
 }
 .link {
@@ -169,13 +160,18 @@ th, td {
     .section-image {
         max-width: 90%;
     }
-    #toggleButton {
-        width: 90%;
-    }
     .section-description {
         max-width: 95%;
     }
     .msg-sp {
         display: inline;
+    }
+    .part-table-header {
+        scroll-margin-top: 60px;
+        max-width: 100%;
+    }
+    .part-table {
+        scroll-margin-top: 60px;
+        max-width: 100%;
     }
 }
