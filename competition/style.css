@@ -16,7 +16,7 @@ label, input, textarea, button {
     padding-top: 60px;
     color: #eee;
     text-align: center;
-    background-image: url('/img/thumb.webp');
+    background-image: url('/img/concthumb.webp');
     background-size: cover;
     background-position: center;
 }
