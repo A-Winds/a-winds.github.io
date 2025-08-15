@@ -234,5 +234,6 @@ label, input, textarea, button {
     }
     .year {
         margin-right: 1em;
+        font-size: 0.7rem;
     }
 }
