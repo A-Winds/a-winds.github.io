@@ -25,6 +25,50 @@ if (!latestConcert) {
 
 const redirectUrl =
   `${import.meta.env.BASE_URL}concerts/history/${latestConcert.slug}/`;
-
-return Astro.redirect(redirectUrl);
 ---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${redirectUrl}`} />
+    <title>開催予定の演奏会 | A-Winds</title>
+  </head>
+  <body>
+    <main>
+      <img src="/img/top_img_logo.svg" alt="A-Winds">
+      <p>最新の演奏会ページへ移動しています<span class="dots"></span></p>
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+  }
+  main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #111111;
+  }
+  img {
+    max-width: 20%;
+  }
+  p {
+    color: #eeeeee;
+    margin: 0;
+    opacity: 0.6;
+  }
+  .dots::after {
+    content: "";
+    animation: dots 1.2s steps(1, end) infinite;
+  }
+  @keyframes dots {
+    0% { content: "."; }
+    33% { content: ".."; }
+    66%, 100% { content: "..."; }
+  }
+</style>

@@ -88,28 +88,28 @@ label, input, textarea, button {
   background-position: center;
 }
 .title {
-    padding-top: 60px;
-    color: #eee;
-    text-align: center;
-    background-image: url('/img/thumb.webp');
-    background-size: cover;
-    background-position: center;
+  padding-top: 60px;
+  color: #eee;
+  text-align: center;
+  background-image: url('/img/thumb.webp');
+  background-size: cover;
+  background-position: center;
 }
 .headline {
-    text-align: center;
-    font-size: 2.1rem;
-    font-weight: bold;
-    margin: 40px 0 10px 0;
-    }
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin: 40px 0 10px 0;
+  }
 .headline-en {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    display: inline-block;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 40px;
-    width: 70%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  display: inline-block;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 40px;
+  width: 70%;
 }
 .Section {
   color: var(--color-text);
@@ -526,9 +526,6 @@ label, input, textarea, button {
   content: '';
   width: 2px;
   background: #ea2f2f;
-}
-.program-commissioned {
-  font-size: 0.8em;
 }
 .adress {
   text-decoration: none;
