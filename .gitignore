@@ -1,28 +1,14 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Dependency directories
+# Dependencies
 node_modules/
 
-# Build directories
+# Build
 dist/
-build/
+.astro/
 
 # Environment variables
 .env
+.env.*
+!.env.example
 
-# IDE files
-.vscode/
-.idea/
-
-# OS generated files
-Thumbs.db
+# Mac OS
 .DS_Store
-
-# Temporary files
-*.tmp
-*.swp
-tmp/
-test/

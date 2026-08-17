@@ -1,0 +1,34 @@
+---
+export type ConcertHistoryItem = {
+  slug: string;
+  title: string;
+  flyer: string;
+  date: string;
+};
+
+const { concerts } = Astro.props as { concerts: ConcertHistoryItem[] };
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const getHref = (slug: string) =>
+  slug === "secret_aw60"
+    ? path("concerts/history/secret/aw60/")
+    : path(`concerts/history/${slug}/`);
+
+const getImg = (flyer: string) =>
+  path(`img/concert/${flyer}`)
+
+const getAlt = (title: string) =>
+  title.replaceAll("{{AWINDS_LOGO}}", "A-Winds");
+---
+
+<div class="gallery">
+  {concerts.map((concert) => (
+    concert.flyer && (
+      <a class="concert-link" id={concert.slug} href={getHref(concert.slug)}>
+        <img class="concert-thumbnail" src={getImg(concert.flyer)} alt={getAlt(concert.title)} loading="lazy" />
+      </a>
+    )
+  ))}
+</div>

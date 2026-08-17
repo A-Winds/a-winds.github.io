@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import InformationCard from "../../components/InformationCard.astro";
+
+import {
+  INFORMATION_PAGE_SIZE,
+  getInformationPage,
+} from "../../lib/microcms.js";
+
+export async function getStaticPaths() {
+  const { totalCount } = await getInformationPage(1);
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(totalCount / INFORMATION_PAGE_SIZE),
+  );
+
+  return Array.from({ length: totalPages }, (_, index) => {
+    const page = index + 1;
+
+    return {
+      params: {
+        page: page === 1 ? undefined : String(page),
+      },
+    };
+  });
+}
+
+const currentPage = Number(Astro.params.page ?? 1);
+
+const {
+  contents: informationList,
+  totalCount,
+} = await getInformationPage(currentPage);
+
+const totalPages = Math.max(
+  1,
+  Math.ceil(totalCount / INFORMATION_PAGE_SIZE),
+);
+
+const informationRows = [];
+
+for (let i = 0; i < informationList.length; i += 3) {
+  informationRows.push(informationList.slice(i, i + 3));
+}
+
+const getPaginationItems = (currentPage, totalPages) => {
+  if (totalPages <= 7) {
+    return Array.from(
+      { length: totalPages },
+      (_, index) => index + 1,
+    );
+  }
+
+  const items = [1];
+
+  const start = Math.max(2, currentPage - 1);
+  const end = Math.min(totalPages - 1, currentPage + 1);
+
+  if (start > 2) {
+    items.push("ellipsis-start");
+  }
+
+  for (let page = start; page <= end; page++) {
+    items.push(page);
+  }
+
+  if (end < totalPages - 1) {
+    items.push("ellipsis-end");
+  }
+
+  items.push(totalPages);
+
+  return items;
+};
+
+const paginationItems = getPaginationItems(
+  currentPage,
+  totalPages,
+);
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const informationPagePath = (page) =>
+  page === 1
+    ? path("information/")
+    : path(`information/${page}/`);
+---
+
+<BaseLayout title="お知らせ | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site" description="最近のお知らせ" ogType="article">
+
+  <div class="title">
+    <h1 class="headline">お知らせ</h1>
+    <h2 class="headline-en">Information</h2>
+  </div>
+
+  <section class="Section">
+    {
+      informationRows.map((row, rowIndex) => (
+        <div class:list={["section-article", { show: rowIndex === 0 },]}>
+          <ul class="grid grid-col-3">
+            {row.map((item, itemIndex) => (<InformationCard item={item} isNew={currentPage === 1 && rowIndex === 0 && itemIndex === 0} />))}
+          </ul>
+        </div>
+      ))
+    }
+
+    {
+      totalPages > 1 && (
+        <nav class="pagination" aria-label="お知らせ一覧のページ">
+          <a class:list={["pagination-direction", { "is-disabled": currentPage === 1 },]}
+            href={currentPage > 1 ? informationPagePath(currentPage - 1) : undefined}
+            aria-disabled={currentPage === 1 ? "true" : undefined} tabindex={currentPage === 1 ? -1 : undefined}>
+            前へ
+          </a>
+
+          <ul class="pagination-list">
+            {
+              paginationItems.map((item) => (
+                <li>
+                  {
+                    typeof item === "string" ? (<span class="pagination-ellipsis" aria-hidden="true">…</span>)
+                    : item === currentPage ? (<span class="pagination-link is-current" aria-current="page">{item}</span>) 
+                    : (<a class="pagination-link" href={informationPagePath(item)}>{item}</a>)
+                  }
+                </li>
+              ))
+            }
+          </ul>
+
+          <a class:list={["pagination-direction", { "is-disabled": currentPage === totalPages },]}
+            href={ currentPage < totalPages ? informationPagePath(currentPage + 1) : undefined}
+            aria-disabled={currentPage === totalPages ? "true" : undefined}
+            tabindex={currentPage === totalPages ? -1 : undefined} >
+            次へ
+          </a>
+        </nav>
+      )
+    }
+
+  </section>
+</BaseLayout>

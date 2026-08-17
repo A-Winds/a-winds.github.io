@@ -1,0 +1,100 @@
+---
+import TextWithAWindsLogo from "./TextWithAWindsLogo.astro";
+
+export type Person = {
+  name: string;
+  kana?: string;
+  nameEn?: string;
+};
+
+export type Piece = {
+  id: string;
+  title: string;
+  subTitle?: string;
+  kana: string;
+  composer?: Person;
+  arranger?: Person;
+  commissioned?: boolean;
+};
+
+export type Performance = {
+  title: string;
+  slug: string;
+  date: string;
+  competition: boolean;
+};
+
+const { piece, performances = [] } = Astro.props as {
+  piece: Piece;
+  performances: Performance[];
+};
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const plainText = (value = "") =>
+  value.replaceAll("{{AWINDS_LOGO}}", "A-Winds");
+
+const personSearchKeys = (person?: Person) =>
+  person ? [person.name, person.kana, person.nameEn].filter(Boolean) : [];
+
+const searchKeys = [
+  plainText(piece.title),
+  plainText(piece.subTitle ?? ""),
+  piece.kana,
+  ...personSearchKeys(piece.composer),
+  ...personSearchKeys(piece.arranger),
+].filter(Boolean);
+
+const getHref = (performance: Performance) => {
+  if (performance.competition) {
+    const year = new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      timeZone: "Asia/Tokyo",
+    }).format(new Date(performance.date));
+
+    return path(`competition/#${year}`);
+  }
+
+  if (performance.slug === "secret_aw60") {
+    return path("concerts/history/secret/aw60/");
+  }
+
+  return path(`concerts/history/${performance.slug}/`);
+};
+---
+
+<div class="piece" data-search={JSON.stringify(searchKeys)}>
+  <div class="piece-header">
+    <span class="piece-name">
+      <span class="piece-title">{piece.title}</span>
+
+      {piece.subTitle && (<br /><span class="piece-subtitle">{piece.subTitle}</span>)}
+
+      {piece.commissioned && (
+        <>
+          <br />
+          <span class="commissioned"><TextWithAWindsLogo text="{{AWINDS_LOGO}}委嘱作品" /></span>
+        </>
+      )}
+    </span>
+
+    <span class="composer">
+      {piece.composer && <>{piece.composer.name}</>}
+      {piece.composer && piece.arranger && <br />}
+      {piece.arranger && <>arr. {piece.arranger.name}</>}
+    </span>
+  </div>
+
+  {performances.length > 0 && (
+    <div class="concerts">
+      <ul>
+        {performances.map((performance) => (
+          <li>
+            <a href={getHref(performance)}><TextWithAWindsLogo text={performance.title} /></a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</div>

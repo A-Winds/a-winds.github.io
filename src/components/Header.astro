@@ -1,0 +1,82 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+---
+
+<header class="header">
+  <h1 class="header-logo">
+    <a href={path()}>
+      <img class="header-logo-img" src={path("img/A-Winds_LOGO.svg")} alt="A-Winds Logo" />
+    </a>
+  </h1>
+
+  <nav class="header-nav-pc" aria-label="メインナビゲーション">
+    <ul class="header-navlist">
+      <li class="header-navitem"><a href={path()}>トップページ</a></li>
+      <li class="header-navitem"><a href={path("information/")}>お知らせ</a></li>
+      <li class="header-navitem">
+        <a tabindex="-1">演奏会情報</a>
+        <ul>
+          <li>
+            <a class="header-submenu" href={path("concerts/upcoming/")}>
+              ＞開催予定の演奏会
+            </a>
+          </li>
+          <li>
+            <a class="header-submenu" href={path("concerts/history/")}>
+              ＞演奏会の記録
+            </a>
+          </li>
+          <li>
+            <a class="header-submenu" href={path("competition/")}>
+              ＞吹奏楽コンクールの記録
+            </a>
+          </li>
+          <li>
+            <a class="header-submenu" href={path("concerts/past_performances/")}>
+              ＞演奏曲一覧
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="header-navitem"><a href={path("joinus/")}>団員募集</a></li>
+      <li class="header-navitem"><a href={path("calendar/")}>活動日程</a></li>
+      <li class="header-navitem"><a href={path("sns/")}>SNS情報</a></li>
+      <li class="header-navitem"><a href={path("contact/")}>お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <ThemeToggle />
+
+  <div class="header-sp">
+    <input id="drawer-input" class="drawer-hidden" type="checkbox" />
+    <label for="drawer-input" class="drawer-open"><span></span></label>
+
+    <nav class="header-nav-sp" aria-label="スマートフォン用ナビゲーション">
+      <ul class="header-navlist-sp">
+        <li class="header-navitem-sp"><a href={path()}>トップページ</a></li>
+        <li class="header-navitem-sp"><a href={path("information/")}>お知らせ</a></li>
+        <li class="header-navitem-sp">
+          <a href={path("concerts/upcoming/")}>開催予定の演奏会</a>
+        </li>
+        <li class="header-navitem-sp">
+          <a href={path("concerts/history/")}>演奏会の記録</a>
+        </li>
+        <li class="header-navitem-sp">
+          <a href={path("competition/")}>吹奏楽コンクールの記録</a>
+        </li>
+        <li class="header-navitem-sp">
+          <a href={path("concerts/past_performances/")}>演奏曲一覧</a>
+        </li>
+        <li class="header-navitem-sp"><a href={path("joinus/")}>団員募集</a></li>
+        <li class="header-navitem-sp"><a href={path("calendar/")}>活動日程</a></li>
+        <li class="header-navitem-sp"><a href={path("sns/")}>SNS情報</a></li>
+        <li class="header-navitem-sp"><a href={path("contact/")}>お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="header-margin"></div>

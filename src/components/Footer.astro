@@ -1,0 +1,49 @@
+---
+const currentYear = new Date().getFullYear();
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+---
+
+<footer class="footer">
+  <figure class="footer-logo">
+    <img class="footer-logo-img" src={path("img/A-Winds_LOGO.svg")} height="100" alt="A-Winds Logo" />
+    <figcaption class="footer-logo-name">
+      A-Winds 奈良アマチュアウィンドオーケストラ<br />
+      Official Web Site
+    </figcaption>
+  </figure>
+
+  <hr class="footer-line" />
+
+  <div class="footer-sns_headline">
+    <h2 class="footer-sns_title">A-Winds SNSアカウント</h2>
+    <ul class="footer-sns">
+      <li class="footer-sns-icon">
+        <a href="https://youtube.com/@AWinds" target="_blank" rel="noreferrer">
+          <img class="footer-sns-icon-img" src={path("img/sns_icons/yt_icon_pms.webp")} alt="A-Winds YouTube" />
+        </a>
+      </li>
+      <li class="footer-sns-icon">
+        <a href="https://www.facebook.com/A.Winds.Nara" target="_blank" rel="noreferrer">
+          <img class="footer-sns-icon-img" src={path("img/sns_icons/Facebook_Logo_Primary.webp")} alt="A-Winds Facebook" />
+        </a>
+      </li>
+      <li class="footer-sns-icon">
+        <a href="https://twitter.com/A_WindsNara" target="_blank" rel="noreferrer">
+          <img class="footer-sns-icon-img" src={path("img/sns_icons/logo-black.webp")} alt="A-Winds X" />
+        </a>
+      </li>
+      <li class="footer-sns-icon">
+        <a href="https://www.instagram.com/a_winds_nara" target="_blank" rel="noreferrer">
+          <img class="footer-sns-icon-img" src={path("img/sns_icons/Instagram_Glyph_Gradient.webp")} alt="A-Winds Instagram" />
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="footer-line" />
+
+  <small class="footer-copy">
+    Copyright © 2024-{currentYear} A-Winds all rights reserved.
+  </small>
+</footer>

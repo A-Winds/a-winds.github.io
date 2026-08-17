@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AWindsLogo from "../../components/AWindsLogo.astro";
+import { getMembers } from "../../lib/microcms.js";
+
+const members = await getMembers();
+
+const latestUpdatedAt = Math.max(
+  ...members.map((member) => new Date(member.updatedAt).getTime()),
+);
+
+const memberUpdatedDate = new Date(latestUpdatedAt).toLocaleDateString("ja-JP", {
+  timeZone: "Asia/Tokyo",
+});
+
+const totals = members.reduce(
+  (total, member) => ({
+    capacity: total.capacity + member.capacity,
+    members: total.members + member.members,
+    recruiting: total.recruiting + member.recruiting,
+  }),
+  { capacity: 0, members: 0, recruiting: 0 },
+);
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+---
+
+<BaseLayout title="団員募集 | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site" description="A-Windsの団員募集ページです。" ogType="article">
+
+  <div class="title">
+    <h1 class="headline">団員募集</h1>
+    <h2 class="headline-en">Join Us</h2>
+  </div>
+
+  <section class="Section">
+    <p class="section-article.show">
+      <AWindsLogo class="A" />では一緒に活動する団員を募集しています。<br />
+      ご興味を持っていただけましたら、見学だけでもお気軽にお問い合わせください！
+    </p>
+
+    <article class="section-article">
+      <img class="about-image" src={path("img/joinus/GroupPhoto.webp")} alt="2023年 吹奏楽コンクールにて" />
+      <h2>- 募集条件 -</h2>
+      <ul class="joinus-list">
+        <li class="joinus-list-item">
+          <AWindsLogo class="A" />の活動趣旨<br />
+          （ウィンドアンサンブル＆オリジナル重視）<br />
+          に賛同いただける方
+        </li>
+        <li class="joinus-list-item">
+          ご自分で楽器を準備できる方
+        </li>
+        <li class="joinus-list-item">
+          全ての活動に積極的に参加できる方
+        </li>
+        <li class="joinus-list-item">
+          18歳以上の方
+        </li>  
+      </ul>
+    </article>
+
+    <article class="section-article">
+      <h2>- 募集パート -</h2>
+
+      <!-- CMSの更新日を表示する場合 -->
+      <!-- （{memberUpdatedDate} 現在）<br /> -->
+
+      <!-- 固定日を表示する場合 -->
+      （2026/1/23 現在）<br />
+
+      オーディションはありません。<br />
+
+      <div>
+        <div class="part-table-header">
+          <span class="part">パート</span>
+          <span class="capacity">定員</span>
+          <span class="current">現団員</span>
+          <span class="recruiting">募集中</span>
+        </div>
+
+        {members.map((member) => (
+          <div class="part-table">
+            <span class="part">{member.part}</span>
+            <span class="capacity">{member.capacity}</span>
+            <span class="current">{member.members}</span>
+            <span class="recruiting">{member.recruiting || ""}</span>
+          </div>
+        ))}
+
+        <div class="part-table">
+          <span class="part">合計</span>
+          <span class="capacity">{totals.capacity}</span>
+          <span class="current">{totals.members}</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="section-article">
+      <h2>- 団費／その他 -</h2>
+      団費 : 月額4,500円<br />
+      ※ 演奏会費用などの別途徴収は原則ありません。<br />
+      活動日程、場所は
+      <a href={path("calendar/")} class="joinus-link">「活動日程」</a>
+      をご参照ください。<br /><br />
+
+      <div class="section-button">
+        <a href={path("contact/")} class="long-button">
+          お問い合わせはこちらか！
+          <img class="A" src={path("img/tactle.webp")} alt="" />
+        </a>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

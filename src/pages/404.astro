@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InformationCard from "../components/InformationCard.astro";
+import AWindsLogo from "../components/AWindsLogo.astro";
+import TextWithAWindsLogo from "../components/TextWithAWindsLogo.astro";
+
+import {
+  getLatestInformation,
+  getLatestConcert,
+} from "../lib/microcms.js";
+
+const [informationList, latestConcert] = await Promise.all([
+  getLatestInformation(6),
+  getLatestConcert(),
+]);
+
+const informationRows = [];
+
+for (let i = 0; i < informationList.length; i += 3) {
+  informationRows.push(informationList.slice(i, i + 3));
+}
+
+const path = (value = "") => `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const concertImageUrl = path(`img/concert/${latestConcert.flyer}`);
+
+const concertUrl = path(`concerts/history/${latestConcert.slug}/`);
+
+const concertAlt = latestConcert.title.replaceAll("{{AWINDS_LOGO}}", "A-Winds");
+---
+
+<BaseLayout title="Page Not Found | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site" description="Page Not Found" ogType="article">
+
+  <div class="title" style="padding-bottom: 180px;">
+    <h1 class="headline">ページが見つかりません</h1>
+    <h2 class="headline-en">404 : Page Not Found</h2>
+    <section class="error-msg">
+      <p class="error-description">
+        お探しのページは、移動または削除された可能性があります。
+      </p>
+      <div class="section-button">
+        <a href="/" class="button">トップページへ戻る</a>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>

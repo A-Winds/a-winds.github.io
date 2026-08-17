@@ -1,0 +1,104 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AWindsLogo from "../../components/AWindsLogo.astro";
+import { getCompetitions } from "../../lib/microcms.js";
+
+const competitions = await getCompetitions();
+
+const yearFormatter = new Intl.DateTimeFormat("ja-JP", {
+  year: "numeric",
+  timeZone: "Asia/Tokyo",
+});
+
+const getYear = (date) =>
+  yearFormatter.format(new Date(date)).replace("年", "");
+
+const getPieceName = (competition, part) =>
+  competition.programItems.find((item) => item.part.includes(part))?.piece?.title ?? "";
+
+const getAwardClass = (award) => {
+  const value = award[0];
+
+  if (value === "金賞・代表") return "representative";
+  if (value === "金賞") return "gold";
+  if (value === "銀賞") return "silver";
+  if (value === "銅賞") return "copper";
+  return "";
+};
+
+const getAwardText = (award) => {
+  const value = award[0];
+  return value === "金賞・代表" ? "代表" : value;
+};
+---
+
+<BaseLayout
+  title="吹奏楽コンクールの記録 | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site"
+  description="A-Windsがこれまで出場した吹奏楽コンクールの記録です。"
+  ogType="article"
+>
+  <div class="title">
+    <h1 class="headline">吹奏楽コンクールの記録</h1>
+    <h2 class="headline-en">Competition</h2>
+  </div>
+
+  <section class="Section">
+    <p class="section-description">
+      <AWindsLogo />が出場した吹奏楽コンクールの記録です。
+    </p>
+
+    <div class="competition-records">
+      {competitions.map((competition) => {
+        const year = getYear(competition.date);
+        const kadaikyoku = getPieceName(competition, "課題曲");
+        const jiyukyoku = getPieceName(competition, "自由曲");
+
+        return (
+          <details id={year} class="result-box">
+            <summary class="result-content">
+              <span class="year">{year}</span>
+
+              <span class="competition-piece">
+                {kadaikyoku}<br />
+                {jiyukyoku}
+              </span>
+
+              <span class="result">
+                {competition.competitionResults.map((item) => (
+                  <span class="competition-result">
+                    {item.title} : <span class={getAwardClass(item.award)}>{getAwardText(item.award)}</span>
+                  </span>
+                ))}
+              </span>
+            </summary>
+
+            <div class="result-detail">
+              <div class="detail-row">
+                <span class="detail-label">指&emsp;&emsp;揮 : </span>
+                <span>
+                  {competition.conductors?.map((conductor) => conductor.name).join(" / ")}
+                </span>
+              </div>
+
+              <div class="detail-row">
+                <span class="detail-label">会&emsp;&emsp;場 : </span>
+                <span>
+                  {competition.competitionResults.map((item) => ( <span class="venue"> {item.title} : {item.venue}</span>))}
+                </span>
+              </div>
+
+              {competition.streamingUrl && (
+                <div class="detail-row">
+                  <span class="detail-label">演奏動画 : </span>
+                  <a href={competition.streamingUrl} target="_blank" rel="noreferrer">
+                    <img class="yticon-intext" src={`${import.meta.env.BASE_URL}img/sns_icons/youtube_social_icon_red.webp`} alt="YouTube" />&nbsp;YouTubeで視聴
+                  </a>
+                </div>
+              )}
+            </div>
+          </details>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

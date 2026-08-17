@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AWindsLogo from "../../components/AWindsLogo.astro";
+---
+
+<BaseLayout title="SNS | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site" description="A-WindsのSNS情報です。" ogType="article">
+
+  <div class="title">
+    <h1 class="headline">SNS情報</h1>
+    <h2 class="headline-en">SNS</h2>
+  </div>
+
+  <section class="Section">
+    <p class="sns-description">
+        <AWindsLogo />のSNSアカウントの一覧です。<br>
+        ぜひ、フォロー・チャンネル登録をお願いします！
+    </p>
+    <article class="section-article.show">
+      <ul class="grid grid-col-2">
+        <li class="grid-item">
+          <article class="card">
+            <a href="https://youtube.com/@AWinds" target="_blank" rel="noreferrer" class="card-link">
+              <img class="card-image" src="/img/sns_thumbs/yt.webp" alt="thumbnail" />
+              <div class="card-info">
+                <h2 class="card-headline">YouTube</h2>
+                <h3 class="card-headline2">@AWinds</h3>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="grid-item">
+          <article class="card">
+            <a href="https://www.facebook.com/A.Winds.Nara" target="_blank" rel="noreferrer" class="card-link">
+              <img class="card-image" src="/img/sns_thumbs/facebook.webp" alt="thumbnail" />
+              <div class="card-info">
+                <h2 class="card-headline">Facebook</h2>
+                <h3 class="card-headline2">A.Winds.Nara</h3>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </article>
+    <article class="section-article">
+        <ul class="grid grid-col-2">
+        <li class="grid-item">
+          <article class="card">
+            <a href="https://twitter.com/A_WindsNara" target="_blank" rel="noreferrer" class="card-link">
+              <img class="card-image" src="/img/sns_thumbs/x.webp" alt="thumbnail" />
+              <div class="card-info">
+                <h2 class="card-headline">X</h2>
+                <h3 class="card-headline2">@A_WindsNara</h3>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="grid-item">
+          <article class="card">
+            <a href="https://www.instagram.com/a_winds_nara" target="_blank" rel="noreferrer" class="card-link">
+              <img class="card-image" src="/img/sns_thumbs/Instagram.webp" alt="thumbnail" />
+              <div class="card-info">
+                <h2 class="card-headline">Instagram</h2>
+                <h3 class="card-headline2">a_winds_nara</h3>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </article>
+
+    <div class="section-button">
+      <a href="#" class="button">ページトップへ戻る</a>
+    </div>
+  </section>
+
+
+</BaseLayout>

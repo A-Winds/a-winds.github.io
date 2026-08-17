@@ -1,0 +1,180 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import TextWithAWindsLogo from "../../../components/TextWithAWindsLogo.astro";
+import ConcertProgram, {
+  type ProgramItem,
+} from "../../../components/ConcertProgram.astro";
+import { microcmsClient } from "../../../lib/microcms";
+
+type Person = {
+  name: string;
+};
+
+type Concert = {
+  subtitle1?: string;
+  subtitle2?: string;
+  title: string;
+  slug: string;
+  flyer: string;
+  date: string;
+  open?: string;
+  start?: string;
+  venue?: string;
+  conductors?: Person[];
+  note?: string | null;
+  programItems?: ProgramItem[];
+  streamingUrl?: string;
+  programNote?: string;
+  competition: boolean;
+};
+
+export async function getStaticPaths() {
+  const concerts = await microcmsClient.getAllContents<Concert>({
+    endpoint: "ensokai",
+    queries: { depth: 2, },
+  });
+
+  return concerts
+    .filter((concert) => !concert.competition && concert.slug !== "secret_aw60")
+    .map((concert) => ({
+      params: { slug: concert.slug },
+      props: { concert },
+    }));
+}
+
+const { concert } = Astro.props as { concert: Concert };
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const plainText = (value = "") =>
+  value.replaceAll("{{AWINDS_LOGO}}", "A-Winds");
+
+const formattedDate = new Intl.DateTimeFormat("ja-JP", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "Asia/Tokyo",
+}).format(new Date(concert.date));
+
+const isUpcoming = new Date(concert.date) > new Date();
+
+const pageHeadline = isUpcoming
+  ? {
+      ja: "開催予定の演奏会",
+      en: "Upcoming Concert",
+    }
+  : {
+      ja: "演奏会の記録",
+      en: "Concert History",
+    };
+
+const flyerUrl = path(`img/concert/${concert.flyer}`);
+
+const programNoteUrl = concert.programNote
+  ? path(`img/program/${concert.programNote}`)
+  : null;
+
+const programViewerUrl = programNoteUrl
+  ? `${path("js/pdfjs-4.6.82-dist/web/viewer.html")}?file=${encodeURIComponent(programNoteUrl)}`
+  : null;
+
+const metaTitle = plainText(concert.title);
+const description = `${metaTitle}の演奏会情報です。`;
+---
+
+<BaseLayout
+  title={`${metaTitle} | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site`}
+  description={description}
+  ogType="article"
+>
+  <div class="title">
+    <h1 class="headline">{pageHeadline.ja}</h1>
+    <h2 class="headline-en">{pageHeadline.en}</h2>
+  </div>
+
+  <section class="Section">
+    <article class="section-article.show">
+      <h2 class="concert-title">
+        {concert.subtitle1 && (
+          <span class="concert-subtitle1">
+            <TextWithAWindsLogo text={concert.subtitle1} />
+          </span>
+        )}
+
+        <span class="concert-main-title">
+          <TextWithAWindsLogo text={concert.title} />
+        </span>
+
+        {concert.subtitle2 && (
+          <span class="concert-subtitle2">
+            <TextWithAWindsLogo text={concert.subtitle2} />
+          </span>
+        )}
+      </h2>
+
+      {concert.flyer && <img class="concert-flyer" src={flyerUrl} alt={metaTitle} />}
+
+      <h3>- 演奏会概要 -</h3>
+
+      <p class="section-description">
+        日&emsp;&emsp;時 : {formattedDate}&emsp;
+        {concert.open && <>{concert.open}開場</>}
+        {concert.open && concert.start && <>／</>}
+        {concert.start && <>{concert.start}開演</>}
+        <br />
+
+        {concert.venue && (<>会&emsp;&emsp;場 : {concert.venue}<br /></>)}
+
+        {concert.conductors?.length > 0 && (<>客演指揮 : {concert.conductors.map((conductor) => conductor.name).join("・")}<br /></>)}
+
+        {concert.note && (<span class="concert-overview-note">{concert.note}</span>)}
+      </p>
+
+      {concert.programItems && concert.programItems.length > 0 && (
+        <>
+          <h3>- プログラム -</h3>
+          <ConcertProgram programItems={concert.programItems} />
+        </>
+      )}
+
+      {programViewerUrl && (
+        <>
+          <h3>- プログラムノート -</h3>
+          <iframe class="program" width="400" height="300" src={programViewerUrl}></iframe>
+        </>
+      )}
+    </article>
+
+    {programNoteUrl && (
+      <>
+        <div class="section-button">
+          <a href={programNoteUrl} class="long-button" target="_blank" rel="noreferrer">
+            プログラムノートを全画面で表示
+          </a>
+        </div>
+
+        <div class="section-button">
+          <a href={programNoteUrl} download={`${concert.slug}パンフレット.pdf`} class="long-button">
+            プログラムノートをダウンロード
+          </a>
+        </div>
+      </>
+    )}
+
+    {concert.streamingUrl && (
+      <div class="section-button">
+        <a href={concert.streamingUrl} class="long-button" target="_blank" rel="noreferrer">
+          ライブ配信はこちらから<br />
+          （YouTubeへ移動します）
+        </a>
+      </div>
+    )}
+
+    <div class="section-button">
+      <a href={path("concerts/history/")} class="long-button">
+        演奏会一覧へ
+      </a>
+    </div>
+  </section>
+</BaseLayout>

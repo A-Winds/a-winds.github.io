@@ -1,0 +1,30 @@
+---
+import { microcmsClient } from "../../../lib/microcms";
+
+type Concert = {
+  slug: string;
+  date: string;
+  competition: boolean;
+};
+
+const result = await microcmsClient.getList<Concert>({
+  endpoint: "ensokai",
+  queries: {
+    fields: "slug,date,competition",
+    orders: "-date",
+    filters: "competition[equals]false",
+    limit: 1,
+  },
+});
+
+const latestConcert = result.contents[0];
+
+if (!latestConcert) {
+  throw new Error("リダイレクト先の演奏会が見つかりません");
+}
+
+const redirectUrl =
+  `${import.meta.env.BASE_URL}concerts/history/${latestConcert.slug}/`;
+
+return Astro.redirect(redirectUrl);
+---

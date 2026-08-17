@@ -1,0 +1,141 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InformationCard from "../components/InformationCard.astro";
+import AWindsLogo from "../components/AWindsLogo.astro";
+import TextWithAWindsLogo from "../components/TextWithAWindsLogo.astro";
+
+import {
+  getLatestInformation,
+  getLatestConcert,
+} from "../lib/microcms.js";
+
+const [informationList, latestConcert] = await Promise.all([
+  getLatestInformation(6),
+  getLatestConcert(),
+]);
+
+const informationRows = [];
+
+for (let i = 0; i < informationList.length; i += 3) {
+  informationRows.push(informationList.slice(i, i + 3));
+}
+
+const path = (value = "") => `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const concertImageUrl = path(`img/concert/${latestConcert.flyer}`);
+
+const concertUrl = path(`concerts/history/${latestConcert.slug}/`);
+
+const concertAlt = latestConcert.title.replaceAll("{{AWINDS_LOGO}}", "A-Winds");
+---
+
+<BaseLayout title="A-Winds奈良アマチュアウィンドオーケストラ Official Web Site" description="奈良県の吹奏楽団、A-Windsのウェブサイトです。楽団の紹介や演奏会情報を掲載しています。" ogType="website">
+
+  <img　class="Top" src={path("img/top_img_logo.svg")} alt="A-Winds" />
+
+  <section class="Section" style="padding-top: 0px;">
+    <h2 class="section-headline">
+      <AWindsLogo /><br class="section-headline-br" />奈良アマチュア<br class="section-headline-br" />ウィンドオーケストラ
+    </h2>
+
+    <h3 class="section-headline-en">
+      About <AWindsLogo />
+    </h3>
+
+    <article class="section-article">
+      <img class="about-image" src={path("img/conc2025.webp")} alt="2025年度吹奏楽コンクールにて" />
+
+      <h2 class="about-headline">- オリジナル指向の吹奏楽団 -</h2>
+
+      <p class="section-description">
+        <AWindsLogo /> 奈良アマチュアウィンドオーケストラは1999年10月、古都奈良に誕生したアマチュア吹奏楽団です。
+        「<AWindsLogo />（エー・ウィンズ）」の
+        "<img class="A" src={path("img/A.svg")} alt="A" />"は「アマチュア（Amateur）」の
+        "<img class="A" src={path("img/A.svg")} alt="A" />"であり、アマチュアならではの音楽づくりを追求することを標榜しています。
+        演奏者一人一人の音楽づくりを演奏に反映できる、管打楽器アンサンブルの延長上としての最小人数の吹奏楽＝ウィンドアンサンブルを指向し、また、吹奏楽の特性を最大限に発揮できる吹奏楽オリジナル曲を中心に取り上げていくことを活動方針としています。
+        <br /><br />
+      </p>
+
+      <div class="section-button">
+        <a href={path("concerts/past_performances/")} class="button">
+          演奏曲一覧
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <section class="Section">
+    <h2 class="section-headline">開催予定の演奏会</h2>
+    <h3 class="section-headline-en">Upcoming Concert</h3>
+
+    <article class="section-article">
+      <a href={concertUrl} class="section-article-link">
+        {latestConcert.flyer && <img class="about-image" src={concertImageUrl} alt={concertAlt} />}
+        <h2><TextWithAWindsLogo text={latestConcert.title} /></h2>
+      </a>
+    </article>
+
+    <div class="section-button">
+      <a href={path("concerts/history/")} class="button">演奏会一覧</a>
+    </div>
+  </section>
+
+  <section class="Section">
+    <h2 class="section-headline">お知らせ</h2>
+    <h3 class="section-headline-en">Information</h3>
+
+    {
+      informationRows.map((row, rowIndex) => (
+        <div class="section-article">
+          <ul class="grid grid-col-3">
+            {row.map((item, itemIndex) => (<InformationCard item={item} isNew={rowIndex === 0 && itemIndex === 0} />))}
+          </ul>
+        </div>
+      ))
+    }
+
+    <div class="section-button">
+      <a href={path("information/")} class="button">お知らせ一覧</a>
+    </div>
+  </section>
+
+  <section class="Section">
+    <h2 class="section-headline">お問い合わせ</h2>
+    <h3 class="section-headline-en">Contact</h3>
+
+    <article class="section-article">
+      <p class="section-description">
+        下のボタンのGoogleフォームからお問い合わせください。<br />
+        また、下記のアドレスから直接メールでお問い合わせいただけます。<br />
+        メールにて見学・入団についてお問い合わせの際は、件名に問い合わせ内容をご記入ください。<br />
+        （「見学希望」「入団希望」など）<br />
+        またメール本文には、お名前・楽器名・経験年数および活動場所を明記してください。<br /><br /><br />
+
+        見学・入団に関するお問い合わせ：
+        <a　href="mailto:a.winds.nara.contact@gmail.com"class="mailadress">
+          a.winds.nara.contact@gmail.com
+        </a><br /><br />
+
+        その他のお問い合わせ：
+        <a href="mailto:awinds.nara.since1999@gmail.com" class="mailadress">
+          awinds.nara.since1999@gmail.com
+        </a><br />
+      </p>
+
+      <div class="section-button">
+        <a href="https://docs.google.com/forms/d/12cjffm5qKcYuAOjrbW9RYl_H7uoVkyKnIoOfRqxGiAM/viewform" class="long-button" target="_blank" rel="noreferrer">
+          見学・入団に関するお問い合わせ<br />
+          （Googleフォームへ移動します）
+        </a>
+      </div>
+
+      <div class="section-button">
+        <a href="https://docs.google.com/forms/d/1Reu7BlHW3Mu93wGgpsco3qyUWxmIswc0qLd6CvQ62cA/viewform" class="long-button" target="_blank" rel="noreferrer">
+          その他のお問い合わせ<br />
+          （Googleフォームへ移動します）
+        </a>
+      </div>
+    </article>
+  </section>
+
+</BaseLayout>

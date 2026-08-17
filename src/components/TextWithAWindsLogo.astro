@@ -1,0 +1,19 @@
+---
+import AWindsLogo from "./AWindsLogo.astro";
+
+const {
+  text = "",
+  token = "{{AWINDS_LOGO}}",
+} = Astro.props;
+
+const parts = String(text).split(token);
+---
+
+{
+  parts.map((part, index) => (
+    <>
+      {index > 0 && <AWindsLogo />}
+      {part}
+    </>
+  ))
+}

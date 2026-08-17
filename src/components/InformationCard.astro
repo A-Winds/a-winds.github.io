@@ -1,0 +1,48 @@
+---
+import TextWithAWindsLogo from "./TextWithAWindsLogo.astro";
+
+const { item, isNew = false } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat("ja-JP", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  timeZone: "Asia/Tokyo",
+})
+  .format(new Date(item.date))
+  .replaceAll("/", ".");
+
+const rawImagePath =
+  typeof item.img === "string" ? item.img.trim() : "";
+
+const imageSrc = rawImagePath
+  ? /^(https?:)?\/\//.test(rawImagePath)
+    ? rawImagePath
+    : `${import.meta.env.BASE_URL}${rawImagePath.replace(/^\/+/, "")}`
+  : null;
+
+const rawUrl =
+  typeof item.url === "string" ? item.url.trim() : "";
+
+const linkUrl = rawUrl
+  ? /^(https?:)?\/\//.test(rawUrl)
+    ? rawUrl
+    : `${import.meta.env.BASE_URL}${rawUrl.replace(/^\/+/, "")}`
+  : undefined;
+---
+
+<li class="grid-item">
+  <article class="card">
+    <a href={linkUrl} tabindex={linkUrl ? undefined : -1} aria-disabled={linkUrl ? undefined : "true"} class="card-link" >
+      {isNew && <span class="card-label">New!</span>}
+
+      {imageSrc && (<img class="card-image" src={imageSrc} alt={`${item.title}のサムネイル`} loading="lazy" />)}
+
+      <div class="card-info">
+        <time class="card-time" datetime={item.date}>{formattedDate}</time>
+        <h3 class="card-headline"><TextWithAWindsLogo text={item.title} /></h3>
+        {item.detail && (<div class="card-description" set:html={item.detail} />)}
+      </div>
+    </a>
+  </article>
+</li>

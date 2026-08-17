@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import AWindsLogo from "../../../components/AWindsLogo.astro";
+import ConcertHistoryGallery, {
+  type ConcertHistoryItem,
+} from "../../../components/ConcertHistoryGallery.astro";
+import { microcmsClient } from "../../../lib/microcms";
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const allConcerts = await microcmsClient.getAllContents<ConcertHistoryItem>({
+  endpoint: "ensokai",
+  queries: {
+    fields: "slug,title,flyer,date,competition",
+    orders: "-date",
+  },
+});
+
+const concerts = allConcerts.filter((concert) => !concert.competition);
+
+const secretScript = path("js/concert_secret.js");
+---
+
+<BaseLayout
+  title="Concert History | A-Winds奈良アマチュアウィンドオーケストラ Official Web Site"
+  description="A-Windsがこれまで公演した演奏会の一覧です。"
+  ogType="article"
+>
+  <div class="title">
+    <h1 class="headline">演奏会の記録</h1>
+    <h2 class="headline-en">Concert History</h2>
+  </div>
+
+  <section class="Section">
+    <p class="section-description">
+      <AWindsLogo />がこれまで公演した演奏会の一覧です。<br />
+      画像を<span class="pc-msg">クリック</span><span class="sp-msg">タップ</span>すると、その演奏会の詳細を見ることができます。<br />
+      詳細ページで、
+      <img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" />
+      マークがついている曲はYouTubeで演奏をお聴きいただけます。
+    </p>
+  </section>
+
+  <ConcertHistoryGallery concerts={concerts} />
+
+  <section class="Section">
+    <div class="section-button">
+      <a href="#" class="long-button">ページトップへ戻る</a>
+    </div>
+  </section>
+
+  <script is:inline src={secretScript}></script>
+</BaseLayout>

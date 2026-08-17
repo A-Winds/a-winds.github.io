@@ -1,0 +1,70 @@
+---
+const {
+  alt = "A-Winds",
+  scale = 1.5,
+  class: className = "",
+} = Astro.props;
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+---
+
+<span class:list={["awinds-logo", className]} style={`--awinds-logo-scale: ${scale};`} role="img" aria-label={alt}>
+  <img class="awinds-logo__light" src={path("img/A-Winds_k.svg")} alt="" aria-hidden="true" />
+
+  <img class="awinds-logo__dark" src={path("img/A-Winds.svg")} alt="" aria-hidden="true" />
+
+  <img class="awinds-logo__hover" src={path("img/A-Winds_r.svg")} alt=""　aria-hidden="true" />
+</span>
+
+<style>
+  .awinds-logo {
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: calc(1em * var(--awinds-logo-scale));
+    margin-inline: 0.06em;
+    vertical-align: -0.4em;
+    line-height: 0;
+  }
+
+  .awinds-logo img {
+    width: auto;
+    height: 100%;
+  }
+
+  /* ライトモード */
+  .awinds-logo__light {
+    display: block;
+  }
+
+  .awinds-logo__dark,
+  .awinds-logo__hover {
+    display: none;
+  }
+
+  /* ダークモード */
+  :global(:root[data-theme="dark"]) .awinds-logo__light {
+    display: none;
+  }
+
+  :global(:root[data-theme="dark"]) .awinds-logo__dark {
+    display: block;
+  }
+
+  /* ホバー・キーボードフォーカス時(親, 祖先がaタグのときだけ) */
+  :global(a:is(:hover, :focus-visible))
+    .awinds-logo
+    .awinds-logo__light,
+  :global(a:is(:hover, :focus-visible))
+    .awinds-logo
+    .awinds-logo__dark {
+    display: none;
+  }
+
+  :global(a:is(:hover, :focus-visible))
+    .awinds-logo
+    .awinds-logo__hover {
+    display: block;
+  }
+</style>

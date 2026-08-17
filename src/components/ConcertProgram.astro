@@ -1,0 +1,126 @@
+---
+import TextWithAWindsLogo from "./TextWithAWindsLogo.astro";
+
+export type Person = {
+  name: string;
+};
+
+export type Piece = {
+  title: string;
+  subTitle?: string;
+  composer?: Person;
+  arranger?: Person;
+  commissioned?: boolean;
+};
+
+export type ProgramItem = {
+  part: string[];
+  piece: Piece;
+  displayTitle?: string;
+  youtubeUrl?: string;
+};
+
+const { programItems = [] } = Astro.props as { programItems: ProgramItem[] };
+
+const path = (value = "") =>
+  `${import.meta.env.BASE_URL}${value.replace(/^\/+/, "")}`;
+
+const items = programItems.map((item) => {
+  const slashIndex = item.displayTitle?.indexOf("／") ?? -1;
+
+  return {
+    ...item,
+    displayTitleMain:
+      item.displayTitle && slashIndex >= 0
+        ? item.displayTitle.slice(0, slashIndex)
+        : item.displayTitle,
+    displayTitleCredit:
+      item.displayTitle && slashIndex >= 0
+        ? item.displayTitle.slice(slashIndex)
+        : "",
+  };
+});
+---
+
+<div class="section-description program-list">
+  {items.map((item, index) => (
+    <>
+      {(index === 0 || item.part?.[0] !== items[index - 1].part?.[0]) && (
+        <h4>{item.part?.[0]}</h4>
+      )}
+
+      <ul class="program-list">
+        <li class="program-piece">
+          {item.youtubeUrl ? (
+            <a href={item.youtubeUrl} class="adress" target="_blank" rel="noreferrer">
+              {item.displayTitle ? (
+                <>
+                  <TextWithAWindsLogo text={item.displayTitleMain ?? ""} />
+
+                  {item.displayTitleCredit && (
+                    <>
+                      <span class="sp-msg">
+                        &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" /><br />
+                      </span>
+                      <TextWithAWindsLogo text={item.displayTitleCredit} />
+                    </>
+                  )}
+
+                  {item.displayTitleCredit ? (
+                    <span class="pc-msg">
+                      &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" />
+                    </span>
+                  ) : (
+                    <>
+                      <span class="sp-msg">
+                        &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" />
+                      </span>
+                      <span class="pc-msg">
+                        &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" />
+                      </span>
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  <TextWithAWindsLogo text={item.piece.title} />
+                  <span class="sp-msg">
+                    &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" /><br />
+                  </span>
+                  {item.piece.composer && <>／{item.piece.composer.name}</>}
+                  {item.piece.composer && item.piece.arranger && <>（arr. {item.piece.arranger.name}）</>}
+                  {!item.piece.composer && item.piece.arranger && <>／arr. {item.piece.arranger.name}</>}
+                  {item.piece.commissioned && (
+                    <span class="program-commissioned">
+                      （<TextWithAWindsLogo text="{{AWINDS_LOGO}}委嘱作品" />）
+                    </span>
+                  )}
+                  <span class="pc-msg">
+                    &nbsp;<img class="yticon-intext" src={path("img/sns_icons/youtube_social_icon_red.webp")} alt="YouTube" />
+                  </span>
+                </>
+              )}
+            </a>
+          ) : item.displayTitle ? (
+            <>
+              <TextWithAWindsLogo text={item.displayTitleMain ?? ""} />
+              {item.displayTitleCredit && <span class="sp-msg"><br /></span>}
+              {item.displayTitleCredit && <TextWithAWindsLogo text={item.displayTitleCredit} />}
+            </>
+          ) : (
+            <>
+              <TextWithAWindsLogo text={item.piece.title} />
+              <span class="sp-msg"><br /></span>
+              {item.piece.composer && <>／{item.piece.composer.name}</>}
+              {item.piece.composer && item.piece.arranger && <>（arr. {item.piece.arranger.name}）</>}
+              {!item.piece.composer && item.piece.arranger && <>／arr. {item.piece.arranger.name}</>}
+              {item.piece.commissioned && (
+                <>（<TextWithAWindsLogo text="{{AWINDS_LOGO}}委嘱作品" />）</>
+              )}
+            </>
+          )}
+        </li>
+      </ul>
+    </>
+  ))}
+</div>

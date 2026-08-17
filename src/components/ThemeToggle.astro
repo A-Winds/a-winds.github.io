@@ -1,0 +1,76 @@
+<button
+  id="theme-toggle"
+  class="theme-toggle"
+  type="button"
+  aria-label="ダークモードに切り替える"
+>
+  <span
+    class="theme-toggle__icon theme-toggle__light"
+    aria-hidden="true"
+  >
+    <svg viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="M4.93 4.93l1.42 1.42" />
+      <path d="M17.66 17.66l1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="M4.93 19.07l1.42-1.42" />
+      <path d="M17.66 6.34l1.41-1.41" />
+    </svg>
+  </span>
+
+  <span
+    class="theme-toggle__icon theme-toggle__dark"
+    aria-hidden="true"
+  >
+    <svg viewBox="0 0 24 24">
+      <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" />
+      <path d="M17.5 5.5v2" />
+      <path d="M16.5 6.5h2" />
+      <path d="M19.5 9v1.5" />
+      <path d="M18.75 9.75h1.5" />
+    </svg>
+  </span>
+</button>
+
+<script>
+  const root = document.documentElement;
+  const button = document.getElementById("theme-toggle");
+
+  function getCurrentTheme() {
+    return root.dataset.theme === "dark" ? "dark" : "light";
+  }
+
+  function updateButton(theme) {
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const nextThemeName =
+      theme === "dark" ? "ライト" : "ダーク";
+
+    button.setAttribute(
+      "aria-label",
+      `${nextThemeName}モードに切り替える`
+    );
+  }
+
+  updateButton(getCurrentTheme());
+
+  button?.addEventListener("click", () => {
+    const nextTheme =
+      getCurrentTheme() === "dark" ? "light" : "dark";
+
+    root.classList.add("theme-changing");
+    root.dataset.theme = nextTheme;
+
+    localStorage.setItem("theme", nextTheme);
+    updateButton(nextTheme);
+
+    window.setTimeout(() => {
+      root.classList.remove("theme-changing");
+    }, 450);
+  });
+</script>
