@@ -31,6 +31,7 @@ const redirectUrl =
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="refresh" content={`1.0;url=${redirectUrl}`} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>開催予定の演奏会 | A-Winds</title>
   </head>
   <body>
@@ -46,7 +47,7 @@ const redirectUrl =
     margin: 0;
   }
   main {
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +61,7 @@ const redirectUrl =
   p {
     color: #eeeeee;
     margin: 0;
-    opacity: 0.6;
+    opacity: 0.8;
   }
   .dots::after {
     content: "";
@@ -70,5 +71,13 @@ const redirectUrl =
     0% { content: "."; }
     33% { content: ".."; }
     66%, 100% { content: "..."; }
+  }
+  @media screen and (max-width: 850px) {
+    img {
+      max-width: 60%;
+    }
+    p {
+      max-width: 90%;
+    }
   }
 </style>
