@@ -41,7 +41,7 @@
   --color-button-text: #eeeeee;
   --color-link-hover: #ea2f2f;
   --color-shadow: #000000;
-  --shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
+  --shadow: 0 5px 10px rgba(255, 255, 255, 0.03);
   --color-table-border: #555555;
   --color-table-hover: #222222;
   --color-text-box-background: #333333;
