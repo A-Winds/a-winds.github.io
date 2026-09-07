@@ -3,13 +3,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import AWindsLogo from "../../components/AWindsLogo.astro";
 import { getMembers } from "../../lib/microcms.js";
 
-const members = await getMembers();
+const memberData = await getMembers();
+const members = memberData.Table;
 
-const latestUpdatedAt = Math.max(
-  ...members.map((member) => new Date(member.updatedAt).getTime()),
-);
-
-const memberUpdatedDate = new Date(latestUpdatedAt).toLocaleDateString("ja-JP", {
+const memberUpdatedDate = new Date(memberData.updatedAt).toLocaleDateString("ja-JP", {
   timeZone: "Asia/Tokyo",
 });
 

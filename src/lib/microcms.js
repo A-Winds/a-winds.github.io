@@ -69,18 +69,12 @@ export async function getLatestConcert() {
 }
 
 /**
- * ensokaiから日付の新しい順に演奏会を取得
+ * memberから団員数情報のテーブルを取得
  */
 export const getMembers = async () => {
-  const response = await microcmsClient.getList({
+  return await microcmsClient.getObject({
     endpoint: membersEndpoint,
-    queries: {
-      limit: 100,
-      orders: "system:default",
-    },
   });
-
-  return response.contents;
 };
 
 /**
