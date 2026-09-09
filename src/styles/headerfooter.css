@@ -1,5 +1,5 @@
 /*---------- Theme Toggle ----------*/
-.theme-toggle {
+.header > .theme-toggle {
   position: relative;
   flex: 0 0 auto;
   width: 48px;
@@ -102,7 +102,7 @@
 
 /* スマートフォンではヘッダー左側に固定 */
 @media screen and (max-width: 850px) {
-  .theme-toggle {
+  .header > .theme-toggle {
     position: absolute;
     top: 11px;
     left: 12px;
@@ -163,12 +163,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
   background-color: rgba(255,255,255,0.4);
   border-bottom: inset thin rgba(255,255,255,0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.header > * {
+  position: relative;
+  z-index: 1;
 }
 .header-logo {
   margin: 0;
